@@ -1,0 +1,57 @@
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Android build outputs
+android-app/.gradle/
+android-app/build/
+android-app/app/build/
+android-app/local.properties
+android-app/*.iml
+android-app/**/*.iml
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+captures/
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle/wrapper/gradle-wrapper.jar
+
+# Garmin Connect IQ build outputs
+watch-app/*.prg
+watch-app/*.iq
+watch-app/bin/
+
+# Developer keys — never commit
+keys/*.pem
+keys/*.der
+keys/*.p12
+keys/*.key
+
+# Kotlin/Java
+*.class
+*.jar
+*.war
+*.aar
+
+# Credentials / secrets
+*.env
+gradle.properties
+local.properties
+ApiKey
+
+# Logs and temp
+*.log
+*.tmp
+*.bak
+CIQ_LOG.BAK

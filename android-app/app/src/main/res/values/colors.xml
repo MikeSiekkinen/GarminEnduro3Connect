@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="garmin_blue">#006CB4</color>
+    <color name="garmin_blue_container">#D2E4FF</color>
+    <color name="status_connected">#1A7F37</color>
+    <color name="status_not_connected">#6E6E6E</color>
+    <color name="status_unknown">#C0392B</color>
+</resources>

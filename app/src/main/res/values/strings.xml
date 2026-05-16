@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Garmin Enduro 3 Connect</string>
+    <string name="refresh">Refresh Devices</string>
+    <string name="paired_devices">Paired Devices</string>
+    <string name="no_devices">No Garmin devices found.\n\nMake sure your Enduro 3 is paired and Garmin Connect is running.</string>
+    <string name="log">Log</string>
+    <string name="send_test">Send Test</string>
+    <string name="open_app">Open App</string>
+    <string name="clear_log">Clear</string>
+</resources>

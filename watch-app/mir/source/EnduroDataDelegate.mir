@@ -1,0 +1,48 @@
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Communications,1,14,28]; ]
+import Toybox.Communications;
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [System,2,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc"; @line = 4; @symbol_classdef = [SendListener,4,6,18]; @symbol_extends<0> = [Communications,4,27,41]; @symbol_extends<1> = [ConnectionListener,4,42,60]; ]
+class SendListener extends Communications.ConnectionListener {
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc"; @line = 5; @symbol_functiondef = [initialize,5,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataDelegate_mc_5_33_7_4_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc" 6 8 ]
+        symbol [ Communications %tmp.1 6 8 22 ];
+        %tmp.1 = getm $.Toybox.Communications;
+        symbol [ ConnectionListener %tmp.2 6 23 41 ];
+        %tmp.2 = getv %tmp.1 :ConnectionListener;
+        symbol [ initialize %tmp.3 6 42 52 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataDelegate_mc_5_33_7_4_stop:
+    }
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc"; @line = 8; @symbol_functiondef = [onComplete,8,20,30]; ]
+    public
+    function onComplete() as Void {
+    }
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc"; @line = 9; @symbol_functiondef = [onError,9,20,27]; ]
+    public
+    function onError() as Void {
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataDelegate_mc_9_38_11_4_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc" 10 8 ]
+        symbol [ System %tmp.1 10 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 10 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "TX error";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataDelegate_mc_9_38_11_4_stop:
+    }
+}
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc"; @line = 1; ]
+<init> {
+}

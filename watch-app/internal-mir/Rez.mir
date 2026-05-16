@@ -1,0 +1,1514 @@
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [WatchUi,3,13,20]; @symbol_usingAlias = [Ui,3,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Graphics,4,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Graphics,5,13,21]; @symbol_usingAlias = [Gfx,5,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 7; @symbol_moduledef = [Rez,7,7,10]; ]
+module Rez {
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 8; @symbol_moduledef = [Drawables,8,11,20]; ]
+    module Drawables {
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 8; ]
+        <init> {
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 9; @position = 27; initialized = true; @symbol_vardef = [LauncherIcon,9,27,39]; @symbol_type<0> = [ResourceId,9,43,53]; ]
+        var LauncherIcon as ResourceId;
+    }
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 12; @symbol_moduledef = [Strings,12,11,18]; ]
+    module Strings {
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 12; ]
+        <init> {
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 13; @position = 27; initialized = true; @symbol_vardef = [AppName,13,27,34]; @symbol_type<0> = [ResourceId,13,38,48]; ]
+        var AppName as ResourceId;
+    }
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 16; @symbol_moduledef = [Styles,16,11,17]; ]
+    module Styles {
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 16; ]
+        <init> {
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 17; @symbol_moduledef = [prompt_font_enhanced_readability__body_with_title,17,15,64]; ]
+        module prompt_font_enhanced_readability__body_with_title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 17; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 18 18 ]
+                symbol [ Graphics %tmp.1 18 34 42 ];
+                %tmp.1 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.2 18 43 62 ];
+                %tmp.2 = getv %tmp.1 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.3 18 63 71 ];
+                %tmp.3 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.4 18 72 92 ];
+                %tmp.4 = getv %tmp.3 :TEXT_JUSTIFY_VCENTER;
+                %tmp.5 = bitor %tmp.2 %tmp.4;
+                putv self :justification %tmp.5;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 19 18 ]
+                symbol [ Graphics %tmp.6 19 25 33 ];
+                %tmp.6 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.7 19 34 43 ];
+                %tmp.7 = getv %tmp.6 :FONT_TINY;
+                putv self :font %tmp.7;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 18; @position = 18; @symbol_constdef = [justification,18,18,31]; ]
+            const justification;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 19; @position = 18; @symbol_constdef = [font,19,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 22; @symbol_moduledef = [system_size__menu_header,22,15,39]; ]
+        module system_size__menu_header {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 22; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 23; @position = 18; @symbol_constdef = [width,23,18,23]; @symbol_type<0> = [Number,23,27,33]; ]
+            const width as Number = 280;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 24; @position = 18; @symbol_constdef = [height,24,18,24]; @symbol_type<0> = [Number,24,28,34]; ]
+            const height as Number = 95;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 27; @symbol_moduledef = [system_loc__hint_button_left_bottom,27,15,50]; ]
+        module system_loc__hint_button_left_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 27; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 28; @position = 18; @symbol_constdef = [x,28,18,19]; @symbol_type<0> = [Number,28,23,29]; ]
+            const x as Number = 7;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 29; @position = 18; @symbol_constdef = [y,29,18,19]; @symbol_type<0> = [Number,29,23,29]; ]
+            const y as Number = 179;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 32; @symbol_moduledef = [prompt_font_enhanced_readability__body_no_title,32,15,62]; ]
+        module prompt_font_enhanced_readability__body_no_title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 32; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 33 18 ]
+                symbol [ Graphics %tmp.8 33 34 42 ];
+                %tmp.8 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.9 33 43 62 ];
+                %tmp.9 = getv %tmp.8 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.10 33 63 71 ];
+                %tmp.10 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.11 33 72 92 ];
+                %tmp.11 = getv %tmp.10 :TEXT_JUSTIFY_VCENTER;
+                %tmp.12 = bitor %tmp.9 %tmp.11;
+                putv self :justification %tmp.12;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 34 18 ]
+                symbol [ Graphics %tmp.13 34 25 33 ];
+                %tmp.13 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.14 34 34 43 ];
+                %tmp.14 = getv %tmp.13 :FONT_TINY;
+                putv self :font %tmp.14;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 33; @position = 18; @symbol_constdef = [justification,33,18,31]; ]
+            const justification;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 34; @position = 18; @symbol_constdef = [font,34,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 37; @symbol_moduledef = [prompt_loc__body_no_title,37,15,40]; ]
+        module prompt_loc__body_no_title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 37; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 38; @position = 18; @symbol_constdef = [x,38,18,19]; @symbol_type<0> = [Number,38,23,29]; ]
+            const x as Number = 28;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 39; @position = 18; @symbol_constdef = [y,39,18,19]; @symbol_type<0> = [Number,39,23,29]; ]
+            const y as Number = 28;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 42; @symbol_moduledef = [system_icon_dark__about,42,15,38]; ]
+        module system_icon_dark__about {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 42; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 43; @position = 18; @symbol_constdef = [filename,43,18,26]; @symbol_type<0> = [String,43,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__about.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 44; @position = 18; @symbol_constdef = [compress,44,18,26]; @symbol_type<0> = [String,44,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 45; @position = 18; @symbol_constdef = [dithering,45,18,27]; @symbol_type<0> = [String,45,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 46; @position = 18; @symbol_constdef = [automaticPalette,46,18,34]; @symbol_type<0> = [String,46,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 49; @symbol_moduledef = [system_icon_light__question,49,15,42]; ]
+        module system_icon_light__question {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 49; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 50; @position = 18; @symbol_constdef = [filename,50,18,26]; @symbol_type<0> = [String,50,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__question.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 51; @position = 18; @symbol_constdef = [dithering,51,18,27]; @symbol_type<0> = [String,51,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 54; @symbol_moduledef = [system_loc__hint_button_left_top,54,15,47]; ]
+        module system_loc__hint_button_left_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 54; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 55; @position = 18; @symbol_constdef = [exclude,55,18,25]; @symbol_type<0> = [Boolean,55,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 58; @symbol_moduledef = [prompt_font__title,58,15,33]; ]
+        module prompt_font__title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 58; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 59 18 ]
+                symbol [ Graphics %tmp.15 59 34 42 ];
+                %tmp.15 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.16 59 43 62 ];
+                %tmp.16 = getv %tmp.15 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.17 59 63 71 ];
+                %tmp.17 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.18 59 72 92 ];
+                %tmp.18 = getv %tmp.17 :TEXT_JUSTIFY_VCENTER;
+                %tmp.19 = bitor %tmp.16 %tmp.18;
+                putv self :justification %tmp.19;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 60 18 ]
+                symbol [ Graphics %tmp.20 60 25 33 ];
+                %tmp.20 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.21 60 34 43 ];
+                %tmp.21 = getv %tmp.20 :FONT_TINY;
+                putv self :font %tmp.21;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 59; @position = 18; @symbol_constdef = [justification,59,18,31]; ]
+            const justification;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 60; @position = 18; @symbol_constdef = [font,60,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 63; @symbol_moduledef = [system_icon_dark__discard,63,15,40]; ]
+        module system_icon_dark__discard {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 63; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 64; @position = 18; @symbol_constdef = [filename,64,18,26]; @symbol_type<0> = [String,64,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__discard.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 65; @position = 18; @symbol_constdef = [compress,65,18,26]; @symbol_type<0> = [String,65,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 66; @position = 18; @symbol_constdef = [dithering,66,18,27]; @symbol_type<0> = [String,66,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 67; @position = 18; @symbol_constdef = [automaticPalette,67,18,34]; @symbol_type<0> = [String,67,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 70; @symbol_moduledef = [system_size__menu_item,70,15,37]; ]
+        module system_size__menu_item {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 70; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 71; @position = 18; @symbol_constdef = [width,71,18,23]; @symbol_type<0> = [Number,71,27,33]; ]
+            const width as Number = 280;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 72; @position = 18; @symbol_constdef = [height,72,18,24]; @symbol_type<0> = [Number,72,28,34]; ]
+            const height as Number = 89;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 75; @symbol_moduledef = [system_color_dark__text,75,15,38]; ]
+        module system_color_dark__text {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 75; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 77 18 ]
+                symbol [ Graphics %tmp.22 77 31 39 ];
+                %tmp.22 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.23 77 40 57 ];
+                %tmp.23 = getv %tmp.22 :COLOR_TRANSPARENT;
+                putv self :background %tmp.23;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 76; @position = 18; @symbol_constdef = [color,76,18,23]; @symbol_type<0> = [Number,76,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 77; @position = 18; @symbol_constdef = [background,77,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 80; @symbol_moduledef = [system_icon_destructive__discard,80,15,47]; ]
+        module system_icon_destructive__discard {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 80; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 81; @position = 18; @symbol_constdef = [filename,81,18,26]; @symbol_type<0> = [String,81,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_destructive__discard.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 82; @position = 18; @symbol_constdef = [dithering,82,18,27]; @symbol_type<0> = [String,82,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 85; @symbol_moduledef = [system_icon_dark__hint_action_menu,85,15,49]; ]
+        module system_icon_dark__hint_action_menu {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 85; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 86; @position = 18; @symbol_constdef = [filename,86,18,26]; @symbol_type<0> = [String,86,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 87; @position = 18; @symbol_constdef = [dithering,87,18,27]; @symbol_type<0> = [String,87,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 90; @symbol_moduledef = [prompt_size__title,90,15,33]; ]
+        module prompt_size__title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 90; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 91; @position = 18; @symbol_constdef = [width,91,18,23]; @symbol_type<0> = [Number,91,27,33]; ]
+            const width as Number = 224;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 92; @position = 18; @symbol_constdef = [height,92,18,24]; @symbol_type<0> = [Number,92,28,34]; ]
+            const height as Number = 42;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 95; @symbol_moduledef = [confirmation_font__body,95,15,38]; ]
+        module confirmation_font__body {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 95; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 96 18 ]
+                symbol [ Graphics %tmp.24 96 34 42 ];
+                %tmp.24 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.25 96 43 62 ];
+                %tmp.25 = getv %tmp.24 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.26 96 63 71 ];
+                %tmp.26 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.27 96 72 92 ];
+                %tmp.27 = getv %tmp.26 :TEXT_JUSTIFY_VCENTER;
+                %tmp.28 = bitor %tmp.25 %tmp.27;
+                putv self :justification %tmp.28;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 97 18 ]
+                symbol [ Graphics %tmp.29 97 25 33 ];
+                %tmp.29 = getm $.Toybox.Graphics;
+                symbol [ FONT_TINY %tmp.30 97 34 43 ];
+                %tmp.30 = getv %tmp.29 :FONT_TINY;
+                putv self :font %tmp.30;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 96; @position = 18; @symbol_constdef = [justification,96,18,31]; ]
+            const justification;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 97; @position = 18; @symbol_constdef = [font,97,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 100; @symbol_moduledef = [system_color_dark__background,100,15,44]; ]
+        module system_color_dark__background {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 100; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 101; @position = 18; @symbol_constdef = [color,101,18,23]; @symbol_type<0> = [Number,101,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 102; @position = 18; @symbol_constdef = [background,102,18,28]; @symbol_type<0> = [Number,102,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 105; @symbol_moduledef = [system_icon_destructive__hint_button_left_top,105,15,60]; ]
+        module system_icon_destructive__hint_button_left_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 105; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 106; @position = 18; @symbol_constdef = [filename,106,18,26]; @symbol_type<0> = [String,106,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_destructive__hint_button_left_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 107; @position = 18; @symbol_constdef = [dithering,107,18,27]; @symbol_type<0> = [String,107,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 110; @symbol_moduledef = [system_size__launch_icon,110,15,39]; ]
+        module system_size__launch_icon {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 110; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 111; @position = 18; @symbol_constdef = [scaleX,111,18,24]; @symbol_type<0> = [Number,111,28,34]; ]
+            const scaleX as Number = 40;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 112; @position = 18; @symbol_constdef = [scaleY,112,18,24]; @symbol_type<0> = [Number,112,28,34]; ]
+            const scaleY as Number = 40;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 113; @position = 18; @symbol_constdef = [scaleRelativeTo,113,18,33]; @symbol_type<0> = [String,113,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 116; @symbol_moduledef = [confirmation_input__confirm,116,15,42]; ]
+        module confirmation_input__confirm {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 116; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 117 18 ]
+                symbol [ WatchUi %tmp.31 117 27 34 ];
+                %tmp.31 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.32 117 35 44 ];
+                %tmp.32 = getv %tmp.31 :KEY_ENTER;
+                putv self :button %tmp.32;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 117; @position = 18; @symbol_constdef = [button,117,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 120; @symbol_moduledef = [prompt_font__body_with_title,120,15,43]; ]
+        module prompt_font__body_with_title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 120; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 121 18 ]
+                symbol [ Graphics %tmp.33 121 34 42 ];
+                %tmp.33 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.34 121 43 62 ];
+                %tmp.34 = getv %tmp.33 :TEXT_JUSTIFY_CENTER;
+                putv self :justification %tmp.34;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 122 18 ]
+                symbol [ Graphics %tmp.35 122 25 33 ];
+                %tmp.35 = getm $.Toybox.Graphics;
+                symbol [ FONT_GLANCE %tmp.36 122 34 45 ];
+                %tmp.36 = getv %tmp.35 :FONT_GLANCE;
+                putv self :font %tmp.36;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 121; @position = 18; @symbol_constdef = [justification,121,18,31]; ]
+            const justification;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 122; @position = 18; @symbol_constdef = [font,122,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 125; @symbol_moduledef = [confirmation_loc__body,125,15,37]; ]
+        module confirmation_loc__body {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 125; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 126; @position = 18; @symbol_constdef = [x,126,18,19]; @symbol_type<0> = [Number,126,23,29]; ]
+            const x as Number = 56;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 127; @position = 18; @symbol_constdef = [y,127,18,19]; @symbol_type<0> = [Number,127,23,29]; ]
+            const y as Number = 56;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 130; @symbol_moduledef = [system_icon_destructive__hint_button_left_bottom,130,15,63]; ]
+        module system_icon_destructive__hint_button_left_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 130; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 131; @position = 18; @symbol_constdef = [filename,131,18,26]; @symbol_type<0> = [String,131,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_destructive__hint_button_left_bottom.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 132; @position = 18; @symbol_constdef = [dithering,132,18,27]; @symbol_type<0> = [String,132,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 135; @symbol_moduledef = [prompt_color_dark__background,135,15,44]; ]
+        module prompt_color_dark__background {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 135; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 136; @position = 18; @symbol_constdef = [color,136,18,23]; @symbol_type<0> = [Number,136,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 137; @position = 18; @symbol_constdef = [background,137,18,28]; @symbol_type<0> = [Number,137,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 140; @symbol_moduledef = [system_icon_destructive__hint_action_menu,140,15,56]; ]
+        module system_icon_destructive__hint_action_menu {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 140; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 141; @position = 18; @symbol_constdef = [filename,141,18,26]; @symbol_type<0> = [String,141,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 142; @position = 18; @symbol_constdef = [dithering,142,18,27]; @symbol_type<0> = [String,142,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 145; @symbol_moduledef = [system_loc__hint_action_menu,145,15,43]; ]
+        module system_loc__hint_action_menu {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 145; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 146; @position = 18; @symbol_constdef = [x,146,18,19]; @symbol_type<0> = [Number,146,23,29]; ]
+            const x as Number = 222;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 147; @position = 18; @symbol_constdef = [y,147,18,19]; @symbol_type<0> = [Number,147,23,29]; ]
+            const y as Number = 44;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 150; @symbol_moduledef = [confirmation_icon__hint_confirm,150,15,46]; ]
+        module confirmation_icon__hint_confirm {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 150; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 151; @position = 18; @symbol_constdef = [filename,151,18,26]; @symbol_type<0> = [String,151,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 152; @position = 18; @symbol_constdef = [dithering,152,18,27]; @symbol_type<0> = [String,152,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 155; @symbol_moduledef = [system_loc__hint_button_left_middle,155,15,50]; ]
+        module system_loc__hint_button_left_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 155; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 156; @position = 18; @symbol_constdef = [x,156,18,19]; @symbol_type<0> = [Number,156,23,29]; ]
+            const x as Number = 0;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 157; @position = 18; @symbol_constdef = [y,157,18,19]; @symbol_type<0> = [Number,157,23,29]; ]
+            const y as Number = 110;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 160; @symbol_moduledef = [prompt_size__body_no_title,160,15,41]; ]
+        module prompt_size__body_no_title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 160; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 161; @position = 18; @symbol_constdef = [width,161,18,23]; @symbol_type<0> = [Number,161,27,33]; ]
+            const width as Number = 224;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 162; @position = 18; @symbol_constdef = [height,162,18,24]; @symbol_type<0> = [Number,162,28,34]; ]
+            const height as Number = 224;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 165; @symbol_moduledef = [system_icon_light__hint_button_left_top,165,15,54]; ]
+        module system_icon_light__hint_button_left_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 165; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 166; @position = 18; @symbol_constdef = [filename,166,18,26]; @symbol_type<0> = [String,166,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__hint_button_left_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 167; @position = 18; @symbol_constdef = [dithering,167,18,27]; @symbol_type<0> = [String,167,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 170; @symbol_moduledef = [prompt_color_light__background,170,15,45]; ]
+        module prompt_color_light__background {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 170; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 171; @position = 18; @symbol_constdef = [color,171,18,23]; @symbol_type<0> = [Number,171,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 172; @position = 18; @symbol_constdef = [background,172,18,28]; @symbol_type<0> = [Number,172,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 175; @symbol_moduledef = [confirmation_input__delete,175,15,41]; ]
+        module confirmation_input__delete {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 175; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 176 18 ]
+                symbol [ WatchUi %tmp.37 176 27 34 ];
+                %tmp.37 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.38 176 35 44 ];
+                %tmp.38 = getv %tmp.37 :KEY_ENTER;
+                putv self :button %tmp.38;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 176; @position = 18; @symbol_constdef = [button,176,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 179; @symbol_moduledef = [system_icon_dark__hint_button_left_top,179,15,53]; ]
+        module system_icon_dark__hint_button_left_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 179; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 180; @position = 18; @symbol_constdef = [filename,180,18,26]; @symbol_type<0> = [String,180,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__hint_button_left_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 181; @position = 18; @symbol_constdef = [dithering,181,18,27]; @symbol_type<0> = [String,181,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 184; @symbol_moduledef = [system_input__action_menu,184,15,40]; ]
+        module system_input__action_menu {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 184; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 185 18 ]
+                symbol [ WatchUi %tmp.39 185 27 34 ];
+                %tmp.39 = getm $.Toybox.WatchUi;
+                symbol [ KEY_ENTER %tmp.40 185 35 44 ];
+                %tmp.40 = getv %tmp.39 :KEY_ENTER;
+                putv self :button %tmp.40;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 185; @position = 18; @symbol_constdef = [button,185,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 188; @symbol_moduledef = [system_icon_light__save,188,15,38]; ]
+        module system_icon_light__save {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 188; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 189; @position = 18; @symbol_constdef = [filename,189,18,26]; @symbol_type<0> = [String,189,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__save.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 190; @position = 18; @symbol_constdef = [dithering,190,18,27]; @symbol_type<0> = [String,190,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 193; @symbol_moduledef = [prompt_color_light__body,193,15,39]; ]
+        module prompt_color_light__body {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 193; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 195 18 ]
+                symbol [ Graphics %tmp.41 195 31 39 ];
+                %tmp.41 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.42 195 40 57 ];
+                %tmp.42 = getv %tmp.41 :COLOR_TRANSPARENT;
+                putv self :background %tmp.42;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 194; @position = 18; @symbol_constdef = [color,194,18,23]; @symbol_type<0> = [Number,194,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 195; @position = 18; @symbol_constdef = [background,195,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 198; @symbol_moduledef = [system_loc__subwindow,198,15,36]; ]
+        module system_loc__subwindow {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 198; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 199; @position = 18; @symbol_constdef = [exclude,199,18,25]; @symbol_type<0> = [Boolean,199,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 202; @symbol_moduledef = [system_icon_light__warning,202,15,41]; ]
+        module system_icon_light__warning {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 202; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 203; @position = 18; @symbol_constdef = [filename,203,18,26]; @symbol_type<0> = [String,203,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__warning.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 204; @position = 18; @symbol_constdef = [dithering,204,18,27]; @symbol_type<0> = [String,204,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 207; @symbol_moduledef = [confirmation_color_light__body,207,15,45]; ]
+        module confirmation_color_light__body {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 207; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 209 18 ]
+                symbol [ Graphics %tmp.43 209 31 39 ];
+                %tmp.43 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.44 209 40 57 ];
+                %tmp.44 = getv %tmp.43 :COLOR_TRANSPARENT;
+                putv self :background %tmp.44;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 208; @position = 18; @symbol_constdef = [color,208,18,23]; @symbol_type<0> = [Number,208,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 209; @position = 18; @symbol_constdef = [background,209,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 212; @symbol_moduledef = [confirmation_icon_light__hint_keep,212,15,49]; ]
+        module confirmation_icon_light__hint_keep {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 212; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 213; @position = 18; @symbol_constdef = [filename,213,18,26]; @symbol_type<0> = [String,213,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 214; @position = 18; @symbol_constdef = [dithering,214,18,27]; @symbol_type<0> = [String,214,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 217; @symbol_moduledef = [activity_color_light__background,217,15,47]; ]
+        module activity_color_light__background {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 217; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 218; @position = 18; @symbol_constdef = [color,218,18,23]; @symbol_type<0> = [Number,218,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 219; @position = 18; @symbol_constdef = [background,219,18,28]; @symbol_type<0> = [Number,219,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 222; @symbol_moduledef = [system_icon_positive__hint_button_right_top,222,15,58]; ]
+        module system_icon_positive__hint_button_right_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 222; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 223; @position = 18; @symbol_constdef = [filename,223,18,26]; @symbol_type<0> = [String,223,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_positive__hint_button_right_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 224; @position = 18; @symbol_constdef = [dithering,224,18,27]; @symbol_type<0> = [String,224,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 227; @symbol_moduledef = [system_size__screen,227,15,34]; ]
+        module system_size__screen {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 227; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 228; @position = 18; @symbol_constdef = [width,228,18,23]; @symbol_type<0> = [Number,228,27,33]; ]
+            const width as Number = 280;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 229; @position = 18; @symbol_constdef = [height,229,18,24]; @symbol_type<0> = [Number,229,28,34]; ]
+            const height as Number = 280;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 232; @symbol_moduledef = [system_icon_destructive__hint_button_right_bottom,232,15,64]; ]
+        module system_icon_destructive__hint_button_right_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 232; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 233; @position = 18; @symbol_constdef = [filename,233,18,26]; @symbol_type<0> = [String,233,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_destructive__hint_button_right_bottom.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 234; @position = 18; @symbol_constdef = [dithering,234,18,27]; @symbol_type<0> = [String,234,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 237; @symbol_moduledef = [system_color_light__background,237,15,45]; ]
+        module system_color_light__background {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 237; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 238; @position = 18; @symbol_constdef = [color,238,18,23]; @symbol_type<0> = [Number,238,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 239; @position = 18; @symbol_constdef = [background,239,18,28]; @symbol_type<0> = [Number,239,32,38]; ]
+            const background as Number = 0xFFFFFF;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 242; @symbol_moduledef = [system_icon_destructive__hint_button_right_top,242,15,61]; ]
+        module system_icon_destructive__hint_button_right_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 242; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 243; @position = 18; @symbol_constdef = [filename,243,18,26]; @symbol_type<0> = [String,243,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_destructive__hint_button_right_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 244; @position = 18; @symbol_constdef = [dithering,244,18,27]; @symbol_type<0> = [String,244,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 247; @symbol_moduledef = [confirmation_loc__hint_confirm,247,15,45]; ]
+        module confirmation_loc__hint_confirm {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 247; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 248; @position = 18; @symbol_constdef = [x,248,18,19]; @symbol_type<0> = [Number,248,23,29]; ]
+            const x as Number = 222;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 249; @position = 18; @symbol_constdef = [y,249,18,19]; @symbol_type<0> = [Number,249,23,29]; ]
+            const y as Number = 44;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 252; @symbol_moduledef = [activity_color_dark__text,252,15,40]; ]
+        module activity_color_dark__text {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 252; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 254 18 ]
+                symbol [ Graphics %tmp.45 254 31 39 ];
+                %tmp.45 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.46 254 40 57 ];
+                %tmp.46 = getv %tmp.45 :COLOR_TRANSPARENT;
+                putv self :background %tmp.46;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 253; @position = 18; @symbol_constdef = [color,253,18,23]; @symbol_type<0> = [Number,253,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 254; @position = 18; @symbol_constdef = [background,254,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 257; @symbol_moduledef = [confirmation_input__keep,257,15,39]; ]
+        module confirmation_input__keep {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 257; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 258 18 ]
+                symbol [ WatchUi %tmp.47 258 27 34 ];
+                %tmp.47 = getm $.Toybox.WatchUi;
+                symbol [ KEY_DOWN %tmp.48 258 35 43 ];
+                %tmp.48 = getv %tmp.47 :KEY_DOWN;
+                putv self :button %tmp.48;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 258; @position = 18; @symbol_constdef = [button,258,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 261; @symbol_moduledef = [prompt_loc__body_with_title,261,15,42]; ]
+        module prompt_loc__body_with_title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 261; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 262; @position = 18; @symbol_constdef = [x,262,18,19]; @symbol_type<0> = [Number,262,23,29]; ]
+            const x as Number = 28;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 263; @position = 18; @symbol_constdef = [y,263,18,19]; @symbol_type<0> = [Number,263,23,29]; ]
+            const y as Number = 84;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 266; @symbol_moduledef = [system_icon_dark__search,266,15,39]; ]
+        module system_icon_dark__search {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 266; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 267; @position = 18; @symbol_constdef = [filename,267,18,26]; @symbol_type<0> = [String,267,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__search.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 268; @position = 18; @symbol_constdef = [compress,268,18,26]; @symbol_type<0> = [String,268,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 269; @position = 18; @symbol_constdef = [dithering,269,18,27]; @symbol_type<0> = [String,269,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 270; @position = 18; @symbol_constdef = [automaticPalette,270,18,34]; @symbol_type<0> = [String,270,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 273; @symbol_moduledef = [activity_color_light__text,273,15,41]; ]
+        module activity_color_light__text {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 273; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 275 18 ]
+                symbol [ Graphics %tmp.49 275 31 39 ];
+                %tmp.49 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.50 275 40 57 ];
+                %tmp.50 = getv %tmp.49 :COLOR_TRANSPARENT;
+                putv self :background %tmp.50;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 274; @position = 18; @symbol_constdef = [color,274,18,23]; @symbol_type<0> = [Number,274,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 275; @position = 18; @symbol_constdef = [background,275,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 278; @symbol_moduledef = [confirmation_icon__hint_keep,278,15,43]; ]
+        module confirmation_icon__hint_keep {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 278; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 279; @position = 18; @symbol_constdef = [filename,279,18,26]; @symbol_type<0> = [String,279,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 280; @position = 18; @symbol_constdef = [dithering,280,18,27]; @symbol_type<0> = [String,280,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 283; @symbol_moduledef = [system_icon_dark__save,283,15,37]; ]
+        module system_icon_dark__save {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 283; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 284; @position = 18; @symbol_constdef = [filename,284,18,26]; @symbol_type<0> = [String,284,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__save.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 285; @position = 18; @symbol_constdef = [compress,285,18,26]; @symbol_type<0> = [String,285,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 286; @position = 18; @symbol_constdef = [dithering,286,18,27]; @symbol_type<0> = [String,286,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 287; @position = 18; @symbol_constdef = [automaticPalette,287,18,34]; @symbol_type<0> = [String,287,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 290; @symbol_moduledef = [system_icon_destructive__hint_button_left_middle,290,15,63]; ]
+        module system_icon_destructive__hint_button_left_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 290; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 291; @position = 18; @symbol_constdef = [filename,291,18,26]; @symbol_type<0> = [String,291,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_destructive__hint_button_left_middle.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 292; @position = 18; @symbol_constdef = [dithering,292,18,27]; @symbol_type<0> = [String,292,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 295; @symbol_moduledef = [system_icon_light__search,295,15,40]; ]
+        module system_icon_light__search {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 295; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 296; @position = 18; @symbol_constdef = [filename,296,18,26]; @symbol_type<0> = [String,296,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__search.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 297; @position = 18; @symbol_constdef = [dithering,297,18,27]; @symbol_type<0> = [String,297,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 300; @symbol_moduledef = [system_icon_dark__hint_button_left_bottom,300,15,56]; ]
+        module system_icon_dark__hint_button_left_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 300; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 301; @position = 18; @symbol_constdef = [filename,301,18,26]; @symbol_type<0> = [String,301,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__hint_button_left_bottom.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 302; @position = 18; @symbol_constdef = [dithering,302,18,27]; @symbol_type<0> = [String,302,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 305; @symbol_moduledef = [system_icon_positive__hint_button_left_top,305,15,57]; ]
+        module system_icon_positive__hint_button_left_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 305; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 306; @position = 18; @symbol_constdef = [filename,306,18,26]; @symbol_type<0> = [String,306,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_positive__hint_button_left_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 307; @position = 18; @symbol_constdef = [dithering,307,18,27]; @symbol_type<0> = [String,307,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 310; @symbol_moduledef = [system_loc__hint_button_right_bottom,310,15,51]; ]
+        module system_loc__hint_button_right_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 310; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 311; @position = 18; @symbol_constdef = [x,311,18,19]; @symbol_type<0> = [Number,311,23,29]; ]
+            const x as Number = 222;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 312; @position = 18; @symbol_constdef = [y,312,18,19]; @symbol_type<0> = [Number,312,23,29]; ]
+            const y as Number = 178;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 315; @symbol_moduledef = [confirmation_icon_dark__hint_reject,315,15,50]; ]
+        module confirmation_icon_dark__hint_reject {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 315; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 316; @position = 18; @symbol_constdef = [filename,316,18,26]; @symbol_type<0> = [String,316,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 317; @position = 18; @symbol_constdef = [dithering,317,18,27]; @symbol_type<0> = [String,317,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 320; @symbol_moduledef = [confirmation_color_dark__body,320,15,44]; ]
+        module confirmation_color_dark__body {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 320; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 322 18 ]
+                symbol [ Graphics %tmp.51 322 31 39 ];
+                %tmp.51 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.52 322 40 57 ];
+                %tmp.52 = getv %tmp.51 :COLOR_TRANSPARENT;
+                putv self :background %tmp.52;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 321; @position = 18; @symbol_constdef = [color,321,18,23]; @symbol_type<0> = [Number,321,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 322; @position = 18; @symbol_constdef = [background,322,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 325; @symbol_moduledef = [confirmation_icon_light__hint_confirm,325,15,52]; ]
+        module confirmation_icon_light__hint_confirm {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 325; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 326; @position = 18; @symbol_constdef = [filename,326,18,26]; @symbol_type<0> = [String,326,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 327; @position = 18; @symbol_constdef = [dithering,327,18,27]; @symbol_type<0> = [String,327,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 330; @symbol_moduledef = [prompt_color_dark__title,330,15,39]; ]
+        module prompt_color_dark__title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 330; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 332 18 ]
+                symbol [ Graphics %tmp.53 332 31 39 ];
+                %tmp.53 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.54 332 40 57 ];
+                %tmp.54 = getv %tmp.53 :COLOR_TRANSPARENT;
+                putv self :background %tmp.54;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 331; @position = 18; @symbol_constdef = [color,331,18,23]; @symbol_type<0> = [Number,331,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 332; @position = 18; @symbol_constdef = [background,332,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 335; @symbol_moduledef = [system_icon_destructive__cancel,335,15,46]; ]
+        module system_icon_destructive__cancel {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 335; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 336; @position = 18; @symbol_constdef = [filename,336,18,26]; @symbol_type<0> = [String,336,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_destructive__cancel.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 337; @position = 18; @symbol_constdef = [dithering,337,18,27]; @symbol_type<0> = [String,337,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 340; @symbol_moduledef = [system_icon_light__hint_button_right_bottom,340,15,58]; ]
+        module system_icon_light__hint_button_right_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 340; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 341; @position = 18; @symbol_constdef = [filename,341,18,26]; @symbol_type<0> = [String,341,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__hint_button_right_bottom.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 342; @position = 18; @symbol_constdef = [dithering,342,18,27]; @symbol_type<0> = [String,342,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 345; @symbol_moduledef = [prompt_loc__title,345,15,32]; ]
+        module prompt_loc__title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 345; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 346; @position = 18; @symbol_constdef = [x,346,18,19]; @symbol_type<0> = [Number,346,23,29]; ]
+            const x as Number = 28;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 347; @position = 18; @symbol_constdef = [y,347,18,19]; @symbol_type<0> = [Number,347,23,29]; ]
+            const y as Number = 21;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 350; @symbol_moduledef = [confirmation_font_enhanced_readability__body,350,15,59]; ]
+        module confirmation_font_enhanced_readability__body {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 350; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 351 18 ]
+                symbol [ Graphics %tmp.55 351 34 42 ];
+                %tmp.55 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.56 351 43 62 ];
+                %tmp.56 = getv %tmp.55 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.57 351 63 71 ];
+                %tmp.57 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.58 351 72 92 ];
+                %tmp.58 = getv %tmp.57 :TEXT_JUSTIFY_VCENTER;
+                %tmp.59 = bitor %tmp.56 %tmp.58;
+                putv self :justification %tmp.59;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 352 18 ]
+                symbol [ Graphics %tmp.60 352 25 33 ];
+                %tmp.60 = getm $.Toybox.Graphics;
+                symbol [ FONT_SMALL %tmp.61 352 34 44 ];
+                %tmp.61 = getv %tmp.60 :FONT_SMALL;
+                putv self :font %tmp.61;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 351; @position = 18; @symbol_constdef = [justification,351,18,31]; ]
+            const justification;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 352; @position = 18; @symbol_constdef = [font,352,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 355; @symbol_moduledef = [prompt_color_light__title,355,15,40]; ]
+        module prompt_color_light__title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 355; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 357 18 ]
+                symbol [ Graphics %tmp.62 357 31 39 ];
+                %tmp.62 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.63 357 40 57 ];
+                %tmp.63 = getv %tmp.62 :COLOR_TRANSPARENT;
+                putv self :background %tmp.63;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 356; @position = 18; @symbol_constdef = [color,356,18,23]; @symbol_type<0> = [Number,356,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 357; @position = 18; @symbol_constdef = [background,357,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 360; @symbol_moduledef = [system_icon_dark__hint_button_right_top,360,15,54]; ]
+        module system_icon_dark__hint_button_right_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 360; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 361; @position = 18; @symbol_constdef = [filename,361,18,26]; @symbol_type<0> = [String,361,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__hint_button_right_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 362; @position = 18; @symbol_constdef = [dithering,362,18,27]; @symbol_type<0> = [String,362,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 365; @symbol_moduledef = [system_icon_dark__hint_button_left_middle,365,15,56]; ]
+        module system_icon_dark__hint_button_left_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 365; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 366; @position = 18; @symbol_constdef = [filename,366,18,26]; @symbol_type<0> = [String,366,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__hint_button_left_middle.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 367; @position = 18; @symbol_constdef = [dithering,367,18,27]; @symbol_type<0> = [String,367,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 370; @symbol_moduledef = [confirmation_icon_dark__hint_keep,370,15,48]; ]
+        module confirmation_icon_dark__hint_keep {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 370; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 371; @position = 18; @symbol_constdef = [filename,371,18,26]; @symbol_type<0> = [String,371,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_keep.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 372; @position = 18; @symbol_constdef = [dithering,372,18,27]; @symbol_type<0> = [String,372,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 375; @symbol_moduledef = [system_icon_light__cancel,375,15,40]; ]
+        module system_icon_light__cancel {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 375; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 376; @position = 18; @symbol_constdef = [filename,376,18,26]; @symbol_type<0> = [String,376,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__cancel.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 377; @position = 18; @symbol_constdef = [dithering,377,18,27]; @symbol_type<0> = [String,377,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 380; @symbol_moduledef = [confirmation_icon_light__hint_reject,380,15,51]; ]
+        module confirmation_icon_light__hint_reject {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 380; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 381; @position = 18; @symbol_constdef = [filename,381,18,26]; @symbol_type<0> = [String,381,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 382; @position = 18; @symbol_constdef = [dithering,382,18,27]; @symbol_type<0> = [String,382,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 385; @symbol_moduledef = [system_icon_light__about,385,15,39]; ]
+        module system_icon_light__about {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 385; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 386; @position = 18; @symbol_constdef = [filename,386,18,26]; @symbol_type<0> = [String,386,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__about.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 387; @position = 18; @symbol_constdef = [dithering,387,18,27]; @symbol_type<0> = [String,387,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 390; @symbol_moduledef = [system_size__toast_icon,390,15,38]; ]
+        module system_size__toast_icon {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 390; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 391; @position = 18; @symbol_constdef = [scaleX,391,18,24]; @symbol_type<0> = [Number,391,28,34]; ]
+            const scaleX as Number = 40;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 392; @position = 18; @symbol_constdef = [scaleY,392,18,24]; @symbol_type<0> = [Number,392,28,34]; ]
+            const scaleY as Number = 40;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 393; @position = 18; @symbol_constdef = [scaleRelativeTo,393,18,33]; @symbol_type<0> = [String,393,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 396; @symbol_moduledef = [system_icon_dark__hint_button_right_middle,396,15,57]; ]
+        module system_icon_dark__hint_button_right_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 396; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 397; @position = 18; @symbol_constdef = [exclude,397,18,25]; @symbol_type<0> = [Boolean,397,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 400; @symbol_moduledef = [confirmation_icon__hint_reject,400,15,45]; ]
+        module confirmation_icon__hint_reject {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 400; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 401; @position = 18; @symbol_constdef = [filename,401,18,26]; @symbol_type<0> = [String,401,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_reject.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 402; @position = 18; @symbol_constdef = [dithering,402,18,27]; @symbol_type<0> = [String,402,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 405; @symbol_moduledef = [system_icon_light__hint_action_menu,405,15,50]; ]
+        module system_icon_light__hint_action_menu {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 405; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 406; @position = 18; @symbol_constdef = [filename,406,18,26]; @symbol_type<0> = [String,406,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 407; @position = 18; @symbol_constdef = [dithering,407,18,27]; @symbol_type<0> = [String,407,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 410; @symbol_moduledef = [system_icon_light__hint_button_right_middle,410,15,58]; ]
+        module system_icon_light__hint_button_right_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 410; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 411; @position = 18; @symbol_constdef = [exclude,411,18,25]; @symbol_type<0> = [Boolean,411,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 414; @symbol_moduledef = [system_icon_destructive__hint_button_right_middle,414,15,64]; ]
+        module system_icon_destructive__hint_button_right_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 414; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 415; @position = 18; @symbol_constdef = [exclude,415,18,25]; @symbol_type<0> = [Boolean,415,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 418; @symbol_moduledef = [confirmation_loc__hint_reject,418,15,44]; ]
+        module confirmation_loc__hint_reject {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 418; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 419; @position = 18; @symbol_constdef = [x,419,18,19]; @symbol_type<0> = [Number,419,23,29]; ]
+            const x as Number = 7;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 420; @position = 18; @symbol_constdef = [y,420,18,19]; @symbol_type<0> = [Number,420,23,29]; ]
+            const y as Number = 179;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 421; @position = 18; @symbol_constdef = [horizontalJustification,421,18,41]; @symbol_type<0> = [String,421,45,51]; ]
+            const horizontalJustification as String = "left";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 424; @symbol_moduledef = [confirmation_icon_dark__hint_delete,424,15,50]; ]
+        module confirmation_icon_dark__hint_delete {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 424; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 425; @position = 18; @symbol_constdef = [filename,425,18,26]; @symbol_type<0> = [String,425,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 426; @position = 18; @symbol_constdef = [dithering,426,18,27]; @symbol_type<0> = [String,426,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 429; @symbol_moduledef = [activity_color_dark__background,429,15,46]; ]
+        module activity_color_dark__background {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 429; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 430; @position = 18; @symbol_constdef = [color,430,18,23]; @symbol_type<0> = [Number,430,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 431; @position = 18; @symbol_constdef = [background,431,18,28]; @symbol_type<0> = [Number,431,32,38]; ]
+            const background as Number = 0x000000;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 434; @symbol_moduledef = [system_icon_light__hint_button_left_bottom,434,15,57]; ]
+        module system_icon_light__hint_button_left_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 434; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 435; @position = 18; @symbol_constdef = [filename,435,18,26]; @symbol_type<0> = [String,435,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__hint_button_left_bottom.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 436; @position = 18; @symbol_constdef = [dithering,436,18,27]; @symbol_type<0> = [String,436,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 439; @symbol_moduledef = [system_icon_positive__hint_button_left_middle,439,15,60]; ]
+        module system_icon_positive__hint_button_left_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 439; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 440; @position = 18; @symbol_constdef = [filename,440,18,26]; @symbol_type<0> = [String,440,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_positive__hint_button_left_middle.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 441; @position = 18; @symbol_constdef = [dithering,441,18,27]; @symbol_type<0> = [String,441,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 444; @symbol_moduledef = [system_size__menu_icon,444,15,37]; ]
+        module system_size__menu_icon {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 444; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 445; @position = 18; @symbol_constdef = [scaleX,445,18,24]; @symbol_type<0> = [Number,445,28,34]; ]
+            const scaleX as Number = 45;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 446; @position = 18; @symbol_constdef = [scaleY,446,18,24]; @symbol_type<0> = [Number,446,28,34]; ]
+            const scaleY as Number = 76;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 447; @position = 18; @symbol_constdef = [scaleRelativeTo,447,18,33]; @symbol_type<0> = [String,447,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 450; @symbol_moduledef = [system_icon_destructive__warning,450,15,47]; ]
+        module system_icon_destructive__warning {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 450; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 451; @position = 18; @symbol_constdef = [filename,451,18,26]; @symbol_type<0> = [String,451,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_destructive__warning.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 452; @position = 18; @symbol_constdef = [dithering,452,18,27]; @symbol_type<0> = [String,452,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 455; @symbol_moduledef = [system_loc__hint_button_right_middle,455,15,51]; ]
+        module system_loc__hint_button_right_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 455; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 456; @position = 18; @symbol_constdef = [exclude,456,18,25]; @symbol_type<0> = [Boolean,456,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 459; @symbol_moduledef = [system_icon_dark__cancel,459,15,39]; ]
+        module system_icon_dark__cancel {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 459; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 460; @position = 18; @symbol_constdef = [filename,460,18,26]; @symbol_type<0> = [String,460,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__cancel.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 461; @position = 18; @symbol_constdef = [compress,461,18,26]; @symbol_type<0> = [String,461,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 462; @position = 18; @symbol_constdef = [dithering,462,18,27]; @symbol_type<0> = [String,462,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 463; @position = 18; @symbol_constdef = [automaticPalette,463,18,34]; @symbol_type<0> = [String,463,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 466; @symbol_moduledef = [prompt_size__body_with_title,466,15,43]; ]
+        module prompt_size__body_with_title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 466; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 467; @position = 18; @symbol_constdef = [width,467,18,23]; @symbol_type<0> = [Number,467,27,33]; ]
+            const width as Number = 224;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 468; @position = 18; @symbol_constdef = [height,468,18,24]; @symbol_type<0> = [Number,468,28,34]; ]
+            const height as Number = 168;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 471; @symbol_moduledef = [system_loc__hint_button_right_top,471,15,48]; ]
+        module system_loc__hint_button_right_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 471; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 472; @position = 18; @symbol_constdef = [x,472,18,19]; @symbol_type<0> = [Number,472,23,29]; ]
+            const x as Number = 222;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 473; @position = 18; @symbol_constdef = [y,473,18,19]; @symbol_type<0> = [Number,473,23,29]; ]
+            const y as Number = 44;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 476; @symbol_moduledef = [system_color_light__text,476,15,39]; ]
+        module system_color_light__text {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 476; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 478 18 ]
+                symbol [ Graphics %tmp.64 478 31 39 ];
+                %tmp.64 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.65 478 40 57 ];
+                %tmp.65 = getv %tmp.64 :COLOR_TRANSPARENT;
+                putv self :background %tmp.65;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 477; @position = 18; @symbol_constdef = [color,477,18,23]; @symbol_type<0> = [Number,477,27,33]; ]
+            const color as Number = 0x000000;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 478; @position = 18; @symbol_constdef = [background,478,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 481; @symbol_moduledef = [system_icon_light__check,481,15,39]; ]
+        module system_icon_light__check {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 481; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 482; @position = 18; @symbol_constdef = [filename,482,18,26]; @symbol_type<0> = [String,482,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__check.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 483; @position = 18; @symbol_constdef = [dithering,483,18,27]; @symbol_type<0> = [String,483,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 486; @symbol_moduledef = [confirmation_input__reject,486,15,41]; ]
+        module confirmation_input__reject {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 486; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 487 18 ]
+                symbol [ WatchUi %tmp.66 487 27 34 ];
+                %tmp.66 = getm $.Toybox.WatchUi;
+                symbol [ KEY_DOWN %tmp.67 487 35 43 ];
+                %tmp.67 = getv %tmp.66 :KEY_DOWN;
+                putv self :button %tmp.67;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 487; @position = 18; @symbol_constdef = [button,487,18,24]; ]
+            const button;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 490; @symbol_moduledef = [system_icon_light__revert,490,15,40]; ]
+        module system_icon_light__revert {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 490; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 491; @position = 18; @symbol_constdef = [filename,491,18,26]; @symbol_type<0> = [String,491,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__revert.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 492; @position = 18; @symbol_constdef = [dithering,492,18,27]; @symbol_type<0> = [String,492,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 495; @symbol_moduledef = [system_size__subwindow,495,15,37]; ]
+        module system_size__subwindow {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 495; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 496; @position = 18; @symbol_constdef = [exclude,496,18,25]; @symbol_type<0> = [Boolean,496,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 499; @symbol_moduledef = [system_icon_positive__hint_button_left_bottom,499,15,60]; ]
+        module system_icon_positive__hint_button_left_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 499; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 500; @position = 18; @symbol_constdef = [filename,500,18,26]; @symbol_type<0> = [String,500,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_positive__hint_button_left_bottom.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 501; @position = 18; @symbol_constdef = [dithering,501,18,27]; @symbol_type<0> = [String,501,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 504; @symbol_moduledef = [system_icon_dark__check,504,15,38]; ]
+        module system_icon_dark__check {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 504; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 505; @position = 18; @symbol_constdef = [filename,505,18,26]; @symbol_type<0> = [String,505,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__check.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 506; @position = 18; @symbol_constdef = [compress,506,18,26]; @symbol_type<0> = [String,506,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 507; @position = 18; @symbol_constdef = [dithering,507,18,27]; @symbol_type<0> = [String,507,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 508; @position = 18; @symbol_constdef = [automaticPalette,508,18,34]; @symbol_type<0> = [String,508,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 511; @symbol_moduledef = [confirmation_loc__hint_keep,511,15,42]; ]
+        module confirmation_loc__hint_keep {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 511; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 512; @position = 18; @symbol_constdef = [x,512,18,19]; @symbol_type<0> = [Number,512,23,29]; ]
+            const x as Number = 7;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 513; @position = 18; @symbol_constdef = [y,513,18,19]; @symbol_type<0> = [Number,513,23,29]; ]
+            const y as Number = 179;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 514; @position = 18; @symbol_constdef = [horizontalJustification,514,18,41]; @symbol_type<0> = [String,514,45,51]; ]
+            const horizontalJustification as String = "left";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 517; @symbol_moduledef = [confirmation_loc__hint_delete,517,15,44]; ]
+        module confirmation_loc__hint_delete {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 517; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 518; @position = 18; @symbol_constdef = [x,518,18,19]; @symbol_type<0> = [Number,518,23,29]; ]
+            const x as Number = 222;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 519; @position = 18; @symbol_constdef = [y,519,18,19]; @symbol_type<0> = [Number,519,23,29]; ]
+            const y as Number = 44;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 522; @symbol_moduledef = [system_icon_positive__hint_action_menu,522,15,53]; ]
+        module system_icon_positive__hint_action_menu {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 522; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 523; @position = 18; @symbol_constdef = [filename,523,18,26]; @symbol_type<0> = [String,523,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_positive__hint_button_right_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 524; @position = 18; @symbol_constdef = [dithering,524,18,27]; @symbol_type<0> = [String,524,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 527; @symbol_moduledef = [system_icon_positive__hint_button_right_middle,527,15,61]; ]
+        module system_icon_positive__hint_button_right_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 527; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 528; @position = 18; @symbol_constdef = [exclude,528,18,25]; @symbol_type<0> = [Boolean,528,29,36]; ]
+            const exclude as Boolean = true;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 531; @symbol_moduledef = [system_icon_light__hint_button_left_middle,531,15,57]; ]
+        module system_icon_light__hint_button_left_middle {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 531; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 532; @position = 18; @symbol_constdef = [filename,532,18,26]; @symbol_type<0> = [String,532,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__hint_button_left_middle.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 533; @position = 18; @symbol_constdef = [dithering,533,18,27]; @symbol_type<0> = [String,533,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 536; @symbol_moduledef = [system_icon_dark__hint_button_right_bottom,536,15,57]; ]
+        module system_icon_dark__hint_button_right_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 536; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 537; @position = 18; @symbol_constdef = [filename,537,18,26]; @symbol_type<0> = [String,537,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__hint_button_right_bottom.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 538; @position = 18; @symbol_constdef = [dithering,538,18,27]; @symbol_type<0> = [String,538,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 541; @symbol_moduledef = [system_icon_positive__hint_button_right_bottom,541,15,61]; ]
+        module system_icon_positive__hint_button_right_bottom {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 541; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 542; @position = 18; @symbol_constdef = [filename,542,18,26]; @symbol_type<0> = [String,542,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_positive__hint_button_right_bottom.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 543; @position = 18; @symbol_constdef = [dithering,543,18,27]; @symbol_type<0> = [String,543,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 546; @symbol_moduledef = [system_icon_dark__revert,546,15,39]; ]
+        module system_icon_dark__revert {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 546; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 547; @position = 18; @symbol_constdef = [filename,547,18,26]; @symbol_type<0> = [String,547,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__revert.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 548; @position = 18; @symbol_constdef = [compress,548,18,26]; @symbol_type<0> = [String,548,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 549; @position = 18; @symbol_constdef = [dithering,549,18,27]; @symbol_type<0> = [String,549,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 550; @position = 18; @symbol_constdef = [automaticPalette,550,18,34]; @symbol_type<0> = [String,550,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 553; @symbol_moduledef = [confirmation_icon_light__hint_delete,553,15,51]; ]
+        module confirmation_icon_light__hint_delete {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 553; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 554; @position = 18; @symbol_constdef = [filename,554,18,26]; @symbol_type<0> = [String,554,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 555; @position = 18; @symbol_constdef = [dithering,555,18,27]; @symbol_type<0> = [String,555,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 558; @symbol_moduledef = [system_icon_dark__question,558,15,41]; ]
+        module system_icon_dark__question {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 558; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 559; @position = 18; @symbol_constdef = [filename,559,18,26]; @symbol_type<0> = [String,559,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__question.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 560; @position = 18; @symbol_constdef = [compress,560,18,26]; @symbol_type<0> = [String,560,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 561; @position = 18; @symbol_constdef = [dithering,561,18,27]; @symbol_type<0> = [String,561,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 562; @position = 18; @symbol_constdef = [automaticPalette,562,18,34]; @symbol_type<0> = [String,562,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 565; @symbol_moduledef = [system_icon_light__discard,565,15,41]; ]
+        module system_icon_light__discard {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 565; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 566; @position = 18; @symbol_constdef = [filename,566,18,26]; @symbol_type<0> = [String,566,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__discard.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 567; @position = 18; @symbol_constdef = [dithering,567,18,27]; @symbol_type<0> = [String,567,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 570; @symbol_moduledef = [device_info,570,15,26]; ]
+        module device_info {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 570; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 572 18 ]
+                symbol [ Toybox %tmp.69 572 32 38 ];
+                %tmp.69 = getv ? :Toybox;
+                symbol [ System %tmp.70 572 39 45 ];
+                %tmp.70 = getv %tmp.69 :System;
+                symbol [ SCREEN_SHAPE_ROUND %tmp.71 572 46 64 ];
+                %tmp.71 = getv %tmp.70 :SCREEN_SHAPE_ROUND;
+                putv self :screenShape %tmp.71;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 571; @position = 18; @symbol_constdef = [screenWidth,571,18,29]; @symbol_type<0> = [Number,571,33,39]; ]
+            const screenWidth as Number = 280;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 572; @position = 18; @symbol_constdef = [screenShape,572,18,29]; ]
+            const screenShape;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 573; @position = 18; @symbol_constdef = [hasNightMode,573,18,30]; @symbol_type<0> = [Boolean,573,34,41]; ]
+            const hasNightMode as Boolean = false;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 574; @position = 18; @symbol_constdef = [hasGpu,574,18,24]; @symbol_type<0> = [Boolean,574,28,35]; ]
+            const hasGpu as Boolean = true;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 575; @position = 18; @symbol_constdef = [screenHeight,575,18,30]; @symbol_type<0> = [Number,575,34,40]; ]
+            const screenHeight as Number = 280;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 576; @position = 18; @symbol_constdef = [hasTouchScreen,576,18,32]; @symbol_type<0> = [Boolean,576,36,43]; ]
+            const hasTouchScreen as Boolean = true;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 577; @position = 18; @symbol_constdef = [hasEnhancedReadabilityMode,577,18,44]; @symbol_type<0> = [Boolean,577,48,55]; ]
+            const hasEnhancedReadabilityMode as Boolean = false;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 580; @symbol_moduledef = [confirmation_icon_dark__hint_confirm,580,15,51]; ]
+        module confirmation_icon_dark__hint_confirm {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 580; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 581; @position = 18; @symbol_constdef = [filename,581,18,26]; @symbol_type<0> = [String,581,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_completion.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 582; @position = 18; @symbol_constdef = [dithering,582,18,27]; @symbol_type<0> = [String,582,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 585; @symbol_moduledef = [prompt_font__body_no_title,585,15,41]; ]
+        module prompt_font__body_no_title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 585; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 586 18 ]
+                symbol [ Graphics %tmp.72 586 34 42 ];
+                %tmp.72 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.73 586 43 62 ];
+                %tmp.73 = getv %tmp.72 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.74 586 63 71 ];
+                %tmp.74 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.75 586 72 92 ];
+                %tmp.75 = getv %tmp.74 :TEXT_JUSTIFY_VCENTER;
+                %tmp.76 = bitor %tmp.73 %tmp.75;
+                putv self :justification %tmp.76;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 587 18 ]
+                symbol [ Graphics %tmp.77 587 25 33 ];
+                %tmp.77 = getm $.Toybox.Graphics;
+                symbol [ FONT_GLANCE %tmp.78 587 34 45 ];
+                %tmp.78 = getv %tmp.77 :FONT_GLANCE;
+                putv self :font %tmp.78;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 586; @position = 18; @symbol_constdef = [justification,586,18,31]; ]
+            const justification;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 587; @position = 18; @symbol_constdef = [font,587,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 590; @symbol_moduledef = [prompt_size__title_icon,590,15,38]; ]
+        module prompt_size__title_icon {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 590; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 591; @position = 18; @symbol_constdef = [scaleX,591,18,24]; @symbol_type<0> = [Float,591,28,33]; ]
+            const scaleX as Float = 0.15;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 592; @position = 18; @symbol_constdef = [scaleRelativeTo,592,18,33]; @symbol_type<0> = [String,592,37,43]; ]
+            const scaleRelativeTo as String = "screen";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 595; @symbol_moduledef = [system_icon_dark__warning,595,15,40]; ]
+        module system_icon_dark__warning {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 595; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 596; @position = 18; @symbol_constdef = [filename,596,18,26]; @symbol_type<0> = [String,596,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_dark__warning.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 597; @position = 18; @symbol_constdef = [compress,597,18,26]; @symbol_type<0> = [String,597,30,36]; ]
+            const compress as String = "true";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 598; @position = 18; @symbol_constdef = [dithering,598,18,27]; @symbol_type<0> = [String,598,31,37]; ]
+            const dithering as String = "none";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 599; @position = 18; @symbol_constdef = [automaticPalette,599,18,34]; @symbol_type<0> = [String,599,38,44]; ]
+            const automaticPalette as String = "true";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 602; @symbol_moduledef = [prompt_loc__title_icon,602,15,37]; ]
+        module prompt_loc__title_icon {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 602; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 603; @position = 18; @symbol_constdef = [x,603,18,19]; @symbol_type<0> = [Number,603,23,29]; ]
+            const x as Number = 140;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 604; @position = 18; @symbol_constdef = [y,604,18,19]; @symbol_type<0> = [Number,604,23,29]; ]
+            const y as Number = 42;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 605; @position = 18; @symbol_constdef = [horizontalJustification,605,18,41]; @symbol_type<0> = [String,605,45,51]; ]
+            const horizontalJustification as String = "center";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 606; @position = 18; @symbol_constdef = [verticalJustification,606,18,39]; @symbol_type<0> = [String,606,43,49]; ]
+            const verticalJustification as String = "center";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 609; @symbol_moduledef = [prompt_font_enhanced_readability__title,609,15,54]; ]
+        module prompt_font_enhanced_readability__title {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 609; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 610 18 ]
+                symbol [ Graphics %tmp.79 610 34 42 ];
+                %tmp.79 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_CENTER %tmp.80 610 43 62 ];
+                %tmp.80 = getv %tmp.79 :TEXT_JUSTIFY_CENTER;
+                symbol [ Graphics %tmp.81 610 63 71 ];
+                %tmp.81 = getm $.Toybox.Graphics;
+                symbol [ TEXT_JUSTIFY_VCENTER %tmp.82 610 72 92 ];
+                %tmp.82 = getv %tmp.81 :TEXT_JUSTIFY_VCENTER;
+                %tmp.83 = bitor %tmp.80 %tmp.82;
+                putv self :justification %tmp.83;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 611 18 ]
+                symbol [ Graphics %tmp.84 611 25 33 ];
+                %tmp.84 = getm $.Toybox.Graphics;
+                symbol [ FONT_SMALL %tmp.85 611 34 44 ];
+                %tmp.85 = getv %tmp.84 :FONT_SMALL;
+                putv self :font %tmp.85;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 610; @position = 18; @symbol_constdef = [justification,610,18,31]; ]
+            const justification;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 611; @position = 18; @symbol_constdef = [font,611,18,22]; ]
+            const font;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 614; @symbol_moduledef = [prompt_color_dark__body,614,15,38]; ]
+        module prompt_color_dark__body {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 614; ]
+            <init> {
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" 616 18 ]
+                symbol [ Graphics %tmp.86 616 31 39 ];
+                %tmp.86 = getm $.Toybox.Graphics;
+                symbol [ COLOR_TRANSPARENT %tmp.87 616 40 57 ];
+                %tmp.87 = getv %tmp.86 :COLOR_TRANSPARENT;
+                putv self :background %tmp.87;
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 615; @position = 18; @symbol_constdef = [color,615,18,23]; @symbol_type<0> = [Number,615,27,33]; ]
+            const color as Number = 0xFFFFFF;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 616; @position = 18; @symbol_constdef = [background,616,18,28]; ]
+            const background;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 619; @symbol_moduledef = [confirmation_icon__hint_delete,619,15,45]; ]
+        module confirmation_icon__hint_delete {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 619; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 620; @position = 18; @symbol_constdef = [filename,620,18,26]; @symbol_type<0> = [String,620,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/confirmation_icon__hint_delete.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 621; @position = 18; @symbol_constdef = [dithering,621,18,27]; @symbol_type<0> = [String,621,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 624; @symbol_moduledef = [system_icon_light__hint_button_right_top,624,15,55]; ]
+        module system_icon_light__hint_button_right_top {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 624; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 625; @position = 18; @symbol_constdef = [filename,625,18,26]; @symbol_type<0> = [String,625,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_light__hint_button_right_top.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 626; @position = 18; @symbol_constdef = [dithering,626,18,27]; @symbol_type<0> = [String,626,31,37]; ]
+            const dithering as String = "none";
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 629; @symbol_moduledef = [confirmation_size__body,629,15,38]; ]
+        module confirmation_size__body {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 629; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 630; @position = 18; @symbol_constdef = [width,630,18,23]; @symbol_type<0> = [Number,630,27,33]; ]
+            const width as Number = 168;
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 631; @position = 18; @symbol_constdef = [height,631,18,24]; @symbol_type<0> = [Number,631,28,34]; ]
+            const height as Number = 168;
+        }
+        [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 634; @symbol_moduledef = [system_icon_positive__check,634,15,42]; ]
+        module system_icon_positive__check {
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 634; ]
+            <init> {
+            }
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 635; @position = 18; @symbol_constdef = [filename,635,18,26]; @symbol_type<0> = [String,635,30,36]; ]
+            const filename as String = "/Users/mikes/Library/Application Support/Garmin/ConnectIQ/Devices/enduro3/system_icon_positive__check.svg";
+            [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 636; @position = 18; @symbol_constdef = [dithering,636,18,27]; @symbol_type<0> = [String,636,31,37]; ]
+            const dithering as String = "none";
+        }
+    }
+}
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,20 @@
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
+    <iq:application
+        entry="EnduroDataApp"
+        id="e5f4a3b2c1d04e5f6a7b8c9d0e1f2a3b"
+        launcherIcon="@Drawables.LauncherIcon"
+        minSdkVersion="6.0.0"
+        name="@Strings.AppName"
+        type="datafield"
+        version="1.0.0">
+        <iq:products>
+            <iq:product id="enduro3"/>
+        </iq:products>
+        <iq:permissions>
+            <iq:uses-permission id="Communications"/>
+        </iq:permissions>
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+    </iq:application>
+</iq:manifest>
