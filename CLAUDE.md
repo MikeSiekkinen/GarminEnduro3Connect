@@ -55,11 +55,14 @@ Start a native Garmin run → edit a data screen → add a field slot → select
 ```
 EnduroDataApp.mc    AppBase — manifest entry point, returns EnduroDataField from getInitialView()
 EnduroDataView.mc   EnduroDataField extends WatchUi.DataField — compute() reads Activity.Info,
-                    throttled transmit via Communications.transmit(); onUpdate() draws to dc
+                    throttled transmit via Communications.transmit(); onUpdate() draws to dc;
+                    onTimerLap() fires at each auto-lap, computes lap avg pace, transmits lap_pace
 EnduroDataDelegate.mc  SendListener extends Communications.ConnectionListener
 ```
 
 DataFields run inside a native activity and receive live `Activity.Info` via `compute()`. A `watch-app` type cannot access native run data — it runs as a standalone app with no concurrent activity context.
+
+Units: pace is min/mile, distance is miles. `METERS_PER_MILE = 1609.344` is a module-level constant in `EnduroDataView.mc` shared by `compute()` and `onTimerLap()`.
 
 ```
 Garmin watch → ConnectIQManager (BLE) → MainViewModel.runStats (StateFlow)
@@ -69,14 +72,24 @@ Garmin watch → ConnectIQManager (BLE) → MainViewModel.runStats (StateFlow)
                                         RunStatsScreen (AR HUD)
                                                   ↓
                                        Everysight Maverick glasses
+
+Garmin watch → ConnectIQManager.lapSplit (SharedFlow)
+                                                  ↓
+                                     EverysightManager.showLapSplit()
+                                                  ↓
+                              RunStatsScreen.showLapSplit() → PopupMessage (5 sec)
 ```
 
 ### Android Everysight integration
 
-- `EverysightManager.kt` — singleton; `start()` connects to glasses via BLE, `updateStats()` pushes pace/dist/time/HR to the screen; `GlassesState` enum: DISCONNECTED / CONNECTING / CONNECTED / ERROR
-- `RunStatsScreen.kt` — `Screen` subclass; 2×2 HUD (PACE/DIST top row, TIME/HR bottom row); green labels, white values
-- `MainViewModel.kt` — `init {}` block collects `runStats` and calls `everysightManager.updateStats()` automatically
+- `EverysightManager.kt` — singleton; `start()` connects to glasses via BLE, `updateStats()` pushes pace/dist/time/HR to the screen, `showLapSplit()` triggers a mile-split popup; `GlassesState` enum: DISCONNECTED / CONNECTING / CONNECTED / ERROR
+- `RunStatsScreen.kt` — `Screen` subclass; 2×2 HUD (PACE/DIST top row, TIME/HR bottom row); green labels, white values; `showLapSplit()` fires a centered `PopupMessage` auto-dismissed after 5 seconds
+- `MainViewModel.kt` — `init {}` block collects `runStats` → `updateStats()` and `lapSplit` → `showLapSplit()` automatically
 - `MainActivity.kt` — "Connect" button calls `viewModel.connectGlasses()`; button disabled while connected/connecting
+
+### Mile-split popup
+
+At each auto-lap the watch calls `onTimerLap()`, which diffs `_lastDist`/`_lastTime` against `_lapStartDist`/`_lapStartTime` to compute the lap's average pace in min/mile, then transmits `{"lap_pace": "M:SS"}` as a separate BLE message. Android routes it: `ConnectIQManager.lapSplit (SharedFlow)` → `MainViewModel` → `EverysightManager.showLapSplit()` → `RunStatsScreen.showLapSplit()` → `PopupMessage` centered on the HUD, auto-dismissed after 5 seconds.
 
 ### Everysight SDK setup (one-time, per dev machine)
 
