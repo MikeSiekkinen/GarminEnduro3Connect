@@ -20,16 +20,18 @@ class EnduroDataField extends WatchUi.DataField {
     }
 
     public function compute(info as Activity.Info) as Void {
+        const METERS_PER_MILE = 1609.344;
+
         var speed = info.currentSpeed;
         if (speed != null && speed > 0.2) {
-            var totalSec = (1000.0 / speed).toNumber();
+            var totalSec = (METERS_PER_MILE / speed).toNumber();
             _pace = (totalSec / 60).format("%d") + ":" + (totalSec % 60).format("%02d");
         } else {
             _pace = "--:--";
         }
 
         var d = info.elapsedDistance;
-        _dist = (d != null) ? (d / 1000.0).format("%.2f") : "-.--";
+        _dist = (d != null) ? (d / METERS_PER_MILE).format("%.2f") : "-.--";
 
         var t = info.timerTime;
         if (t != null) {
@@ -69,7 +71,7 @@ class EnduroDataField extends WatchUi.DataField {
         dc.drawText(cx, h * 0.18, Graphics.FONT_LARGE, _pace, Graphics.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, h * 0.42, Graphics.FONT_TINY, "KM", Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(cx, h * 0.42, Graphics.FONT_TINY, "MI", Graphics.TEXT_JUSTIFY_CENTER);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, h * 0.52, Graphics.FONT_MEDIUM, _dist, Graphics.TEXT_JUSTIFY_CENTER);
 

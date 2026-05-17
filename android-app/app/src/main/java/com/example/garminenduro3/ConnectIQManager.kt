@@ -23,7 +23,7 @@ class ConnectIQManager private constructor(private val context: Context) {
 
     data class RunStats(
         val pace: String = "--:--",
-        val distKm: String = "-.--",
+        val distMi: String = "-.--",
         val elapsed: String = "-:--:--",
         val heartRate: String = "--",
     )
@@ -145,11 +145,11 @@ class ConnectIQManager private constructor(private val context: Context) {
                     if (map != null) {
                         _runStats.value = RunStats(
                             pace      = map["pace"] as? String ?: "--:--",
-                            distKm    = map["dist"] as? String ?: "-.--",
+                            distMi    = map["dist"] as? String ?: "-.--",
                             elapsed   = map["time"] as? String ?: "-:--:--",
                             heartRate = map["hr"]   as? String ?: "--",
                         )
-                        appendMessage("pace=${map["pace"]}  dist=${map["dist"]}km  hr=${map["hr"]}")
+                        appendMessage("pace=${map["pace"]}  dist=${map["dist"]}mi  hr=${map["hr"]}")
                     } else {
                         appendMessage(messageData.joinToString(", ") { it.toString() })
                     }

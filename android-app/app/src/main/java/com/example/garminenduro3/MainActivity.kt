@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun onRunStats(stats: ConnectIQManager.RunStats) {
         binding.textPaceValue.text = stats.pace
-        binding.textDistValue.text = stats.distKm
+        binding.textDistValue.text = stats.distMi
         binding.textTimeValue.text = stats.elapsed
         binding.textHrValue.text = stats.heartRate
     }
