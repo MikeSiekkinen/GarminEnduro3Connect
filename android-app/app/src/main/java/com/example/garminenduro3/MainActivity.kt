@@ -47,6 +47,10 @@ class MainActivity : AppCompatActivity() {
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         }
 
+        binding.buttonConnectGlasses.setOnClickListener {
+            viewModel.connectGlasses()
+        }
+
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch { viewModel.sdkState.collect { onSdkState(it) } }
@@ -54,6 +58,7 @@ class MainActivity : AppCompatActivity() {
                 launch { viewModel.messages.collect { onMessages(it) } }
                 launch { viewModel.runStats.collect { onRunStats(it) } }
                 launch { viewModel.errorMessage.collect { msg -> msg?.let { updateStatus(it) } } }
+                launch { viewModel.glassesState.collect { onGlassesState(it) } }
             }
         }
 
@@ -105,6 +110,18 @@ class MainActivity : AppCompatActivity() {
         if (messages.isEmpty()) return
         binding.textMessages.text = messages.takeLast(20).joinToString("\n")
         binding.scrollMessages.post { binding.scrollMessages.fullScroll(View.FOCUS_DOWN) }
+    }
+
+    private fun onGlassesState(state: EverysightManager.GlassesState) {
+        val label = when (state) {
+            EverysightManager.GlassesState.DISCONNECTED -> "disconnected"
+            EverysightManager.GlassesState.CONNECTING   -> "connecting..."
+            EverysightManager.GlassesState.CONNECTED    -> "connected"
+            EverysightManager.GlassesState.ERROR        -> "error"
+        }
+        binding.textGlassesStatus.text = "AR Glasses: $label"
+        binding.buttonConnectGlasses.isEnabled = state == EverysightManager.GlassesState.DISCONNECTED ||
+                state == EverysightManager.GlassesState.ERROR
     }
 
     private fun updateStatus(text: String) {

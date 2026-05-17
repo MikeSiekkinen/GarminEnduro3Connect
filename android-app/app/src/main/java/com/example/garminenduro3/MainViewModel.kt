@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.garmin.android.connectiq.IQDevice
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -14,6 +15,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private val manager = ConnectIQManager.getInstance(application)
+    private val everysightManager = EverysightManager.getInstance(application)
 
     val sdkState = manager.sdkState.stateIn(
         viewModelScope, SharingStarted.WhileSubscribed(5_000), ConnectIQManager.SdkState.NOT_INITIALIZED
@@ -30,13 +32,25 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val runStats = manager.runStats.stateIn(
         viewModelScope, SharingStarted.WhileSubscribed(5_000), ConnectIQManager.RunStats()
     )
+    val glassesState = everysightManager.glassesState.stateIn(
+        viewModelScope, SharingStarted.WhileSubscribed(5_000), EverysightManager.GlassesState.DISCONNECTED
+    )
+
+    init {
+        viewModelScope.launch {
+            manager.runStats.collect { stats ->
+                everysightManager.updateStats(stats.pace, stats.distKm, stats.elapsed, stats.heartRate)
+            }
+        }
+    }
 
     fun initialize() = manager.initialize()
-
     fun listenToDevice(device: IQDevice) = manager.watchForAppEvents(device, WATCH_APP_UUID)
+    fun connectGlasses() = everysightManager.start()
 
     override fun onCleared() {
         super.onCleared()
         manager.shutdown()
+        everysightManager.stop()
     }
 }
