@@ -6,8 +6,11 @@ import com.garmin.android.connectiq.IQApp
 import com.garmin.android.connectiq.IQDevice
 import com.garmin.android.connectiq.exception.InvalidStateException
 import com.garmin.android.connectiq.exception.ServiceUnavailableException
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
@@ -42,6 +45,9 @@ class ConnectIQManager private constructor(private val context: Context) {
 
     private val _runStats = MutableStateFlow(RunStats())
     val runStats: StateFlow<RunStats> = _runStats.asStateFlow()
+
+    private val _lapSplit = MutableSharedFlow<String>(extraBufferCapacity = 1)
+    val lapSplit: SharedFlow<String> = _lapSplit.asSharedFlow()
 
     private var connectIQ: ConnectIQ? = null
 
@@ -143,13 +149,19 @@ class ConnectIQManager private constructor(private val context: Context) {
                     @Suppress("UNCHECKED_CAST")
                     val map = messageData.firstOrNull() as? Map<*, *>
                     if (map != null) {
-                        _runStats.value = RunStats(
-                            pace      = map["pace"] as? String ?: "--:--",
-                            distMi    = map["dist"] as? String ?: "-.--",
-                            elapsed   = map["time"] as? String ?: "-:--:--",
-                            heartRate = map["hr"]   as? String ?: "--",
-                        )
-                        appendMessage("pace=${map["pace"]}  dist=${map["dist"]}mi  hr=${map["hr"]}")
+                        val lapPace = map["lap_pace"] as? String
+                        if (lapPace != null) {
+                            _lapSplit.tryEmit(lapPace)
+                            appendMessage("lap split: $lapPace /mi")
+                        } else {
+                            _runStats.value = RunStats(
+                                pace      = map["pace"] as? String ?: "--:--",
+                                distMi    = map["dist"] as? String ?: "-.--",
+                                elapsed   = map["time"] as? String ?: "-:--:--",
+                                heartRate = map["hr"]   as? String ?: "--",
+                            )
+                            appendMessage("pace=${map["pace"]}  dist=${map["dist"]}mi  hr=${map["hr"]}")
+                        }
                     } else {
                         appendMessage(messageData.joinToString(", ") { it.toString() })
                     }

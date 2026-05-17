@@ -40,6 +40,10 @@ class EverysightManager private constructor(private val context: Context) {
         screen?.update(pace, dist, elapsed, hr)
     }
 
+    fun showLapSplit(lapPace: String) {
+        screen?.showLapSplit(lapPace)
+    }
+
     fun stop() {
         Evs.instance().stop()
         screen = null

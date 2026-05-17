@@ -39,7 +39,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     init {
         viewModelScope.launch {
             manager.runStats.collect { stats ->
-                everysightManager.updateStats(stats.pace, stats.distKm, stats.elapsed, stats.heartRate)
+                everysightManager.updateStats(stats.pace, stats.distMi, stats.elapsed, stats.heartRate)
+            }
+        }
+        viewModelScope.launch {
+            manager.lapSplit.collect { lapPace ->
+                everysightManager.showLapSplit(lapPace)
             }
         }
     }

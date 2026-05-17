@@ -4,6 +4,7 @@ import UIKit.app.Screen
 import UIKit.app.data.Align
 import UIKit.app.data.EvsColor
 import UIKit.app.resources.Font
+import UIKit.controls.popup.PopupMessage
 import UIKit.widgets.Text
 
 class RunStatsScreen : Screen() {
@@ -56,5 +57,14 @@ class RunStatsScreen : Screen() {
         distValue.setText(dist)
         timeValue.setText(elapsed)
         hrValue.setText(hr)
+    }
+
+    fun showLapSplit(lapPace: String) {
+        val label = Text()
+        label.setText("Mile  $lapPace /mi")
+            .setResource(Font.StockFont.Medium)
+            .setTextAlign(Align.center)
+            .setForegroundColor(EvsColor.Green.rgba)
+        showPopup(PopupMessage(label, getHeight() * 0.5f, 5000L))
     }
 }
