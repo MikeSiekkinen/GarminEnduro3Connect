@@ -15,17 +15,19 @@ class EverysightManager private constructor(private val context: Context) {
     val glassesState: StateFlow<GlassesState> = _glassesState
 
     @Volatile private var screen: RunStatsScreen? = null
+    private var appEvents: IEvsAppEvents? = null
 
     fun start() {
         _glassesState.value = GlassesState.CONNECTING
-        Evs.instance().start(context, object : IEvsAppEvents {
+        Evs.init(context)
+        val events = object : IEvsAppEvents {
             override fun onReady() {
                 _glassesState.value = GlassesState.CONNECTED
                 val s = RunStatsScreen()
                 screen = s
                 Evs.instance().screens().addScreen(s)
             }
-            override fun onDisconnected() {
+            override fun onUnReady() {
                 _glassesState.value = GlassesState.DISCONNECTED
                 screen = null
             }
@@ -33,7 +35,10 @@ class EverysightManager private constructor(private val context: Context) {
                 _glassesState.value = GlassesState.ERROR
                 screen = null
             }
-        })
+        }
+        appEvents = events
+        Evs.instance().registerAppEvents(events)
+        Evs.instance().start()
     }
 
     fun updateStats(pace: String, dist: String, elapsed: String, hr: String) {
@@ -44,9 +49,19 @@ class EverysightManager private constructor(private val context: Context) {
         screen?.showLapSplit(lapPace)
     }
 
+    fun updateStreetName(name: String) {
+        screen?.updateStreetName(name)
+    }
+
+    fun setStreetNameVisible(visible: Boolean) {
+        screen?.setStreetNameVisible(visible)
+    }
+
     fun stop() {
+        appEvents?.let { Evs.instance().unregisterAppEvents(it) }
         Evs.instance().stop()
         screen = null
+        appEvents = null
         _glassesState.value = GlassesState.DISCONNECTED
     }
 

@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace = "com.example.garminenduro3"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.garminenduro3"
-        minSdk = 23
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -55,6 +55,7 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
 
     // Everysight Maverick AR glasses SDK
     implementation("com.everysight:evskit:2.6.1")

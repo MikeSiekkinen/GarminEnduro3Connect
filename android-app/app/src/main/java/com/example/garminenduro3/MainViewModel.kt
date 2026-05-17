@@ -16,6 +16,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val manager = ConnectIQManager.getInstance(application)
     private val everysightManager = EverysightManager.getInstance(application)
+    private val streetNameProvider = StreetNameProvider(application)
 
     val sdkState = manager.sdkState.stateIn(
         viewModelScope, SharingStarted.WhileSubscribed(5_000), ConnectIQManager.SdkState.NOT_INITIALIZED
@@ -47,15 +48,22 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 everysightManager.showLapSplit(lapPace)
             }
         }
+        viewModelScope.launch {
+            streetNameProvider.streetName.collect { name ->
+                everysightManager.updateStreetName(name)
+            }
+        }
     }
 
     fun initialize() = manager.initialize()
     fun listenToDevice(device: IQDevice) = manager.watchForAppEvents(device, WATCH_APP_UUID)
     fun connectGlasses() = everysightManager.start()
+    fun startStreetNameUpdates() = streetNameProvider.start()
 
     override fun onCleared() {
         super.onCleared()
         manager.shutdown()
         everysightManager.stop()
+        streetNameProvider.stop()
     }
 }
