@@ -55,4 +55,8 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    // Everysight Maverick AR glasses SDK
+    implementation("com.everysight:evskit:2.6.1")
+    implementation("com.everysight:nativeevskit:2.6.1")
 }

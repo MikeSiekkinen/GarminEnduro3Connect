@@ -1,6 +1,6 @@
 # GarminEnduro3Connect
 
-Streams live run stats (pace, distance, elapsed time, HR) from a Garmin Enduro 3 native activity to an Android companion app via BLE.
+Streams live run stats (pace, distance, elapsed time, HR) from a Garmin Enduro 3 native activity to an Android companion app via BLE, which also forwards stats to Everysight Maverick AR glasses for heads-up display.
 
 ## Project layout
 
@@ -60,6 +60,38 @@ EnduroDataDelegate.mc  SendListener extends Communications.ConnectionListener
 ```
 
 DataFields run inside a native activity and receive live `Activity.Info` via `compute()`. A `watch-app` type cannot access native run data — it runs as a standalone app with no concurrent activity context.
+
+```
+Garmin watch → ConnectIQManager (BLE) → MainViewModel.runStats (StateFlow)
+                                                  ↓
+                                     EverysightManager.updateStats()
+                                                  ↓
+                                        RunStatsScreen (AR HUD)
+                                                  ↓
+                                       Everysight Maverick glasses
+```
+
+### Android Everysight integration
+
+- `EverysightManager.kt` — singleton; `start()` connects to glasses via BLE, `updateStats()` pushes pace/dist/time/HR to the screen; `GlassesState` enum: DISCONNECTED / CONNECTING / CONNECTED / ERROR
+- `RunStatsScreen.kt` — `Screen` subclass; 2×2 HUD (PACE/DIST top row, TIME/HR bottom row); green labels, white values
+- `MainViewModel.kt` — `init {}` block collects `runStats` and calls `everysightManager.updateStats()` automatically
+- `MainActivity.kt` — "Connect" button calls `viewModel.connectGlasses()`; button disabled while connected/connecting
+
+### Everysight SDK setup (one-time, per dev machine)
+
+SDK version: **2.6.1**, hosted on GitHub Packages.
+
+1. Create a GitHub PAT with `read:packages` scope at github.com → Settings → Developer Settings → Personal Access Tokens
+2. Add to `~/.gradle/gradle.properties` (not committed):
+   ```
+   gpr.user=YOUR_GITHUB_USERNAME
+   gpr.token=YOUR_GITHUB_PAT
+   ```
+3. Place the `ApiKey` file (from everysight.com/developer) in `android-app/app/src/main/assets/ApiKey`
+
+Maven repo: `https://maven.pkg.github.com/everysight-maverick/m1-android-maven`
+Dependencies: `com.everysight:evskit:2.6.1`, `com.everysight:nativeevskit:2.6.1`
 
 ## Android build config
 
