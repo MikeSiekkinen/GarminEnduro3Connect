@@ -9,6 +9,7 @@ watch-app/          Monkey C DataField (active)
 android-app/        Kotlin Android companion app (active)
 app/                Old Android app — ignore, superseded by android-app/
 keys/               developer_key.pem + developer_key.der — DO NOT REGENERATE
+docs/               Design plans and notes (e.g. street-name-ar-hud-plan.md)
 ```
 
 ## Build commands
@@ -78,18 +79,63 @@ Garmin watch → ConnectIQManager.lapSplit (SharedFlow)
                                      EverysightManager.showLapSplit()
                                                   ↓
                               RunStatsScreen.showLapSplit() → PopupMessage (5 sec)
+
+Android FusedLocationProviderClient (1Hz GPS)
+                    ↓
+          StreetNameProvider (reverse geocode via Android Geocoder, triggers on ≥10m move)
+                    ↓
+          MainViewModel → EverysightManager.updateStreetName()
+                    ↓
+          RunStatsScreen.updateStreetName() → white text overlay at top of HUD
 ```
 
 ### Android Everysight integration
 
-- `EverysightManager.kt` — singleton; `start()` connects to glasses via BLE, `updateStats()` pushes pace/dist/time/HR to the screen, `showLapSplit()` triggers a mile-split popup; `GlassesState` enum: DISCONNECTED / CONNECTING / CONNECTED / ERROR
-- `RunStatsScreen.kt` — `Screen` subclass; 2×2 HUD (PACE/DIST top row, TIME/HR bottom row); green labels, white values; `showLapSplit()` fires a centered `PopupMessage` auto-dismissed after 5 seconds
-- `MainViewModel.kt` — `init {}` block collects `runStats` → `updateStats()` and `lapSplit` → `showLapSplit()` automatically
-- `MainActivity.kt` — "Connect" button calls `viewModel.connectGlasses()`; button disabled while connected/connecting
+- `EverysightManager.kt` — singleton; `start()` inits + connects to glasses, `updateStats()` pushes pace/dist/time/HR, `showLapSplit()` triggers mile-split popup, `updateStreetName()` updates street overlay, `setStreetNameVisible()` toggles it; `GlassesState` enum: DISCONNECTED / CONNECTING / CONNECTED / ERROR
+- `RunStatsScreen.kt` — `Screen` subclass; 2×2 HUD (PACE/DIST top row, TIME/HR bottom row); green labels, white values; white street name text centered at top; `showLapSplit()` fires a centered `PopupMessage`; `updateStreetName()`/`setStreetNameVisible()` control the overlay
+- `StreetNameProvider.kt` — wraps `FusedLocationProviderClient` + `Geocoder`; emits `StateFlow<String>` of current street name (`.thoroughfare`); exposes `lastBearing: Float` for Phase 2 AR; geocodes on moves ≥10m; call `start()`/`stop()` from ViewModel
+- `MainViewModel.kt` — `AndroidViewModel`; `init {}` collects `runStats` → `updateStats()`, `lapSplit` → `showLapSplit()`, `streetNameProvider.streetName` → `updateStreetName()`; call `startStreetNameUpdates()` after location permission granted
+- `MainActivity.kt` — "Connect" button calls `viewModel.connectGlasses()`; requests both BT and `ACCESS_FINE_LOCATION` permissions on all Android versions
+
+### Everysight SDK API (SDK 2.6.1) — hard-won correct signatures
+
+**Initialization** — the context goes to `Evs.init()`, not `start()`:
+```kotlin
+Evs.init(context)
+Evs.instance().registerAppEvents(listener)
+Evs.instance().start()          // returns Boolean, no args
+```
+
+**Teardown:**
+```kotlin
+Evs.instance().unregisterAppEvents(listener)
+Evs.instance().stop()
+```
+
+**`IEvsAppEvents` abstract methods** (must implement both):
+```kotlin
+override fun onReady()    // glasses connected and rendering
+override fun onUnReady()  // glasses disconnected  ← NOT onDisconnected()
+override fun onError(errCode: AppErrorCode, description: String)
+```
+
+**`PopupMessage` constructor:**
+```kotlin
+PopupMessage(uiElement: UIElement, alignV: AlignV, timeoutMs: Int)
+// e.g. PopupMessage(label, AlignV.center, 5000)
+// Second arg is AlignV enum (top/center/bottom), NOT a Float position
+// Third arg is Int milliseconds, NOT Long
+```
+
+**`AndroidManifest.xml`** — Everysight SDK declares its own theme; override it:
+```xml
+<manifest xmlns:android="..." xmlns:tools="http://schemas.android.com/tools">
+    <application ... tools:replace="android:theme">
+```
 
 ### Mile-split popup
 
-At each auto-lap the watch calls `onTimerLap()`, which diffs `_lastDist`/`_lastTime` against `_lapStartDist`/`_lapStartTime` to compute the lap's average pace in min/mile, then transmits `{"lap_pace": "M:SS"}` as a separate BLE message. Android routes it: `ConnectIQManager.lapSplit (SharedFlow)` → `MainViewModel` → `EverysightManager.showLapSplit()` → `RunStatsScreen.showLapSplit()` → `PopupMessage` centered on the HUD, auto-dismissed after 5 seconds.
+At each auto-lap the watch calls `onTimerLap()`, which diffs `_lastDist`/`_lastTime` against `_lapStartDist`/`_lapStartTime` to compute the lap's average pace in min/mile, then transmits `{"lap_pace": "M:SS"}` as a separate BLE message. Android routes it: `ConnectIQManager.lapSplit (SharedFlow)` → `MainViewModel` → `EverysightManager.showLapSplit()` → `RunStatsScreen.showLapSplit()` → `PopupMessage(label, AlignV.center, 5000)` on the HUD.
 
 ### Everysight SDK setup (one-time, per dev machine)
 
@@ -110,8 +156,35 @@ Dependencies: `com.everysight:evskit:2.6.1`, `com.everysight:nativeevskit:2.6.1`
 
 - Java 21 required — Java 25 breaks Kotlin DSL. Path set in `android-app/gradle.properties`
 - Gradle 8.13, AGP 8.13.2, Kotlin 2.3.21
+- `compileSdk = 35`, `minSdk = 25`, `targetSdk = 34`
+  - compileSdk 35 required by `play-services-location` transitive deps
+  - minSdk 25 required by Everysight evskit SDK
 - Use `kotlin { compilerOptions { jvmTarget = JvmTarget.JVM_17 } }` — `kotlinOptions` is deprecated in this version
 - Android SDK at `~/Library/Android/sdk` (set in `android-app/local.properties`)
+- JVM heap: `org.gradle.jvmargs=-Xmx2g -XX:MaxMetaspaceSize=512m` (in `android-app/gradle.properties`)
+
+### Gitignored files — must copy to worktrees manually
+
+`android-app/gradle.properties`, `android-app/local.properties`, and `android-app/gradle/wrapper/gradle-wrapper.jar` are all gitignored. When working in a git worktree, copy them before building:
+```
+WORKTREE=.claude/worktrees/<name>/android-app
+cp android-app/gradle.properties android-app/local.properties "$WORKTREE/"
+cp android-app/gradle/wrapper/gradle-wrapper.jar "$WORKTREE/gradle/wrapper/"
+```
+
+## In-progress work
+
+### Phase 1 — Street name HUD overlay (branch: `worktree-street-name-phase1`)
+
+**Status:** Builds cleanly. Needs on-device testing.
+
+Uses Android's own GPS (`FusedLocationProviderClient`) + `Geocoder` to reverse-geocode position and show the current street name as a white floating overlay at the top of the glasses HUD. No watch-side changes required.
+
+Next step: install APK and walk/run outside to verify street name appears and updates correctly.
+
+### Phase 2 — AR ground-plane street label (not yet started)
+
+Full design in `docs/street-name-ar-hud-plan.md`. Uses Everysight LOS Kit (`ArScreen` + `ArWindow` in ENU world space) to project the street name onto the road surface ahead of the runner. Always-on, user-configurable distance (5/10/15/20m via spinner in app + long-press on glasses to cycle). User-togglable alongside Phase 1 HUD strip.
 
 ## Sideloading troubleshooting
 
