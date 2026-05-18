@@ -11,9 +11,21 @@
         android:usesPermissionFlags="neverForLocation" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
-    <!-- Location required for BLE scanning on Android < 12 -->
+    <!-- Location required for BLE scanning on Android < 12 and for geocoding -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Required on Android 13+ for Everysight SDK notification channel -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Everysight SDK validates API key with Everysight server -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- Everysight SDK's PreviewService runs as a foreground service for BLE. SDK's manifest
+         omits these (untested on Android 14+); without them startForeground silently throws
+         MissingForegroundServiceTypeException and the SDK never scans. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
 
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
 
@@ -32,6 +44,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Add the foregroundServiceType the SDK's manifest forgot. -->
+        <service
+            android:name="com.everysight.evskit.android.internal.ui.preview.PreviewService"
+            android:foregroundServiceType="connectedDevice"
+            tools:node="merge" />
 
     </application>
 

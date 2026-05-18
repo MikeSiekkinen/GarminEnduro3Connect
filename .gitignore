@@ -49,6 +49,9 @@ keys/*.key
 gradle.properties
 local.properties
 ApiKey
+android-app/app/src/main/assets/sdk.*.key
+android-app/app/src/main/assets/sdk.key
+android-app/app/src/main/assets/app.key
 
 # Logs and temp
 *.log
