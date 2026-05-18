@@ -8,634 +8,596 @@ import Toybox.Graphics;
 import Toybox.Lang;
 [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [WatchUi,5,14,21]; ]
 import Toybox.WatchUi;
-[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 7; @symbol_classdef = [EnduroDataField,7,6,21]; @symbol_extends<0> = [WatchUi,7,30,37]; @symbol_extends<1> = [DataField,7,38,47]; ]
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 7; @position = 6; @symbol_constdef = [METERS_PER_MILE,7,6,21]; ]
+const METERS_PER_MILE = 1609.344;
+[ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 9; @symbol_classdef = [EnduroDataField,9,6,21]; @symbol_extends<0> = [WatchUi,9,30,37]; @symbol_extends<1> = [DataField,9,38,47]; ]
 class EnduroDataField extends WatchUi.DataField {
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 7; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 9; ]
     <init> {
     }
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 7; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 9; ]
     static
     <init> {
     }
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 9; @position = 16; @symbol_vardef = [_pace,9,16,21]; @symbol_type<0> = [String,9,28,34]; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 11; @position = 16; @symbol_vardef = [_pace,11,16,21]; @symbol_type<0> = [String,11,33,39]; ]
     private
     var _pace as String = "--:--";
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 10; @position = 16; @symbol_vardef = [_dist,10,16,21]; @symbol_type<0> = [String,10,28,34]; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 12; @position = 16; @symbol_vardef = [_dist,12,16,21]; @symbol_type<0> = [String,12,33,39]; ]
     private
     var _dist as String = "-.--";
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 11; @position = 16; @symbol_vardef = [_elapsed,11,16,24]; @symbol_type<0> = [String,11,28,34]; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 13; @position = 16; @symbol_vardef = [_elapsed,13,16,24]; @symbol_type<0> = [String,13,33,39]; ]
     private
     var _elapsed as String = "-:--:--";
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 12; @position = 16; @symbol_vardef = [_hr,12,16,19]; @symbol_type<0> = [String,12,28,34]; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 14; @position = 16; @symbol_vardef = [_hr,14,16,19]; @symbol_type<0> = [String,14,33,39]; ]
     private
     var _hr as String = "--";
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 13; @position = 16; @symbol_vardef = [_tick,13,16,21]; @symbol_type<0> = [Number,13,28,34]; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 15; @position = 16; @symbol_vardef = [_lastDist,15,16,25]; @symbol_type<0> = [Float,15,33,38]; ]
     private
-    var _tick as Number = 0;
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 15; @symbol_functiondef = [initialize,15,20,30]; ]
+    var _lastDist as Float = 0.0;
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 16; @position = 16; @symbol_vardef = [_lastTime,16,16,25]; @symbol_type<0> = [Number,16,33,39]; ]
+    private
+    var _lastTime as Number = 0;
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 17; @position = 16; @symbol_vardef = [_lapStartDist,17,16,29]; @symbol_type<0> = [Float,17,33,38]; ]
+    private
+    var _lapStartDist as Float = 0.0;
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 18; @position = 16; @symbol_vardef = [_lapStartTime,18,16,29]; @symbol_type<0> = [Number,18,33,39]; ]
+    private
+    var _lapStartTime as Number = 0;
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 19; @position = 16; @symbol_vardef = [_logo,19,16,21]; @symbol_type<0> = [BitmapResource,19,25,39]; ]
+    private
+    var _logo as BitmapResource or Null = null;
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 21; @symbol_functiondef = [initialize,21,20,30]; ]
     public
     function initialize() as Void {
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_15_33_17_4_start:
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 16 8 ]
-        symbol [ DataField %tmp.2 16 8 17 ];
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_21_33_23_4_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 22 8 ]
+        symbol [ DataField %tmp.2 22 8 17 ];
         %tmp.2 = getv ? :DataField;
-        symbol [ initialize %tmp.3 16 18 28 ];
+        symbol [ initialize %tmp.3 22 18 28 ];
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_15_33_17_4_stop:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_21_33_23_4_stop:
     }
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 19; @symbol_functiondef = [onLayout,19,20,28]; @symbol_param<0> = [dc,19,29,31]; @symbol_param<0>_type<0> = [Dc,19,35,37]; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 25; @symbol_functiondef = [onLayout,25,20,28]; @symbol_param<0> = [dc,25,29,31]; @symbol_param<0>_type<0> = [Dc,25,35,37]; ]
     public
     function onLayout(dc as Dc) as Void {
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_25_47_27_4_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 26 8 ]
+        symbol [ WatchUi %tmp.1 26 16 23 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ loadResource %tmp.2 26 24 36 ];
+        %tmp.2 = getv function %tmp.1 :loadResource;
+        symbol [ Rez %tmp.4 26 37 40 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Drawables %tmp.5 26 41 50 ];
+        %tmp.5 = getv %tmp.4 :Drawables;
+        symbol [ EverysightLogo %tmp.6 26 51 65 ];
+        %tmp.6 = getv %tmp.5 :EverysightLogo;
+        %tmp.7 = invoke %tmp.1 %tmp.2(%tmp.6);
+        %tmp.8 = as %tmp.7 BitmapResource;
+        symbol [ BitmapResource %tmp.8 26 70 84 ];
+        symbol [ _logo ? 26 8 13 ];
+        putv self :_logo %tmp.8;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_25_47_27_4_stop:
     }
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 22; @symbol_functiondef = [compute,22,20,27]; @symbol_param<0> = [info,22,28,32]; @symbol_param<0>_type<0> = [Activity,22,36,44]; @symbol_param<0>_type<1> = [Info,22,45,49]; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 29; @symbol_functiondef = [compute,29,20,27]; @symbol_param<0> = [info,29,28,32]; @symbol_param<0>_type<0> = [Activity,29,36,44]; @symbol_param<0>_type<1> = [Info,29,45,49]; ]
     public
     function compute(info as Activity.Info) as Void {
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_start:
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 23 8 ]
-        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_stop" ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 30 8 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_stop" ]
         %speed.1 = local;
-        symbol [ speed %speed.1 23 12 17 ];
+        symbol [ speed %speed.1 30 12 17 ];
         %tmp.1 = lgetv %info;
-        symbol [ info %tmp.1 23 20 24 ];
-        symbol [ currentSpeed %tmp.2 23 25 37 ];
+        symbol [ info %tmp.1 30 20 24 ];
+        symbol [ currentSpeed %tmp.2 30 25 37 ];
         %tmp.2 = getv %tmp.1 :currentSpeed;
         lputv %speed.1 %tmp.2;
-        symbol [ speed %speed.1 23 12 17 ];
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 24 8 ]
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_8_29_8_if_stmt:
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_12_24_37_begin:
+        symbol [ speed %speed.1 30 12 17 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 31 8 ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_8_36_8_if_stmt:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_12_31_37_begin:
         %tmp.3 = lgetv %speed.1;
-        symbol [ speed %tmp.3 24 12 17 ];
+        symbol [ speed %tmp.3 31 12 17 ];
         %tmp.4 = null;
         %tmp.5 = ne %tmp.3 %tmp.4;
-        bf %tmp.5 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_8_29_8_if_else_false;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_29_24_37_true:
+        bf %tmp.5 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_8_36_8_if_else_false;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_29_31_37_true:
         %tmp.6 = lgetv %speed.1;
-        symbol [ speed %tmp.6 24 29 34 ];
+        symbol [ speed %tmp.6 31 29 34 ];
         %tmp.7 = as %tmp.6 { (!Null) };
         %tmp.8 = 0.2;
         %tmp.9 = gt %tmp.7 %tmp.8;
         push %tmp.9;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_29_24_37_end:
-        %tmp.10 = phi [%tmp.5 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_12_24_37_begin] [%tmp.9 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_29_24_37_true] [%tmp.10 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_29_24_37_end];
-        bf %tmp.10 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_8_29_8_if_else_false;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_8_29_8_if_true:
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_42_27_8_start:
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 25 12 ]
-        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_42_27_8_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_42_27_8_stop" ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_29_31_37_end:
+        %tmp.10 = phi [%tmp.5 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_12_31_37_begin] [%tmp.9 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_29_31_37_true] [%tmp.10 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_29_31_37_end];
+        bf %tmp.10 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_8_36_8_if_else_false;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_8_36_8_if_true:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_42_34_8_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 32 12 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_42_34_8_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_42_34_8_stop" ]
         %totalSec.2 = local;
-        symbol [ totalSec %totalSec.2 25 16 24 ];
-        %tmp.11 = 1000.0;
-        %tmp.12 = lgetv %speed.1;
-        symbol [ speed %tmp.12 25 37 42 ];
-        %tmp.13 = as %tmp.12 { (!Null) };
-        %tmp.14 = div %tmp.11 %tmp.13;
-        symbol [ toNumber %tmp.15 25 44 52 ];
-        %tmp.15 = getv function %tmp.14 :toNumber;
-        %tmp.16 = invoke %tmp.14 %tmp.15();
-        lputv %totalSec.2 %tmp.16;
-        symbol [ totalSec %totalSec.2 25 16 24 ];
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 26 12 ]
-        %tmp.17 = lgetv %totalSec.2;
-        symbol [ totalSec %tmp.17 26 21 29 ];
-        %tmp.18 = 60;
-        %tmp.19 = div %tmp.17 %tmp.18;
-        symbol [ format %tmp.20 26 36 42 ];
-        %tmp.20 = getv function %tmp.19 :format;
-        %tmp.21 = "%d";
-        %tmp.22 = invoke %tmp.19 %tmp.20(%tmp.21);
-        %tmp.23 = ":";
-        %tmp.24 = add %tmp.22 %tmp.23;
-        %tmp.25 = lgetv %totalSec.2;
-        symbol [ totalSec %tmp.25 26 58 66 ];
-        %tmp.26 = 60;
-        %tmp.27 = mod %tmp.25 %tmp.26;
-        symbol [ format %tmp.28 26 73 79 ];
-        %tmp.28 = getv function %tmp.27 :format;
-        %tmp.29 = "%02d";
-        %tmp.30 = invoke %tmp.27 %tmp.28(%tmp.29);
-        %tmp.31 = add %tmp.24 %tmp.30;
-        symbol [ _pace ? 26 12 17 ];
-        putv self :_pace %tmp.31;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_42_27_8_stop:
-        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_8_29_8_if_end;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_8_29_8_if_else_false:
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_27_15_29_8_start:
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 28 12 ]
-        %tmp.32 = "--:--";
-        symbol [ _pace ? 28 12 17 ];
+        symbol [ totalSec %totalSec.2 32 16 24 ];
+        symbol [ METERS_PER_MILE %tmp.12 32 28 43 ];
+        %tmp.12 = getv ? :METERS_PER_MILE;
+        %tmp.13 = lgetv %speed.1;
+        symbol [ speed %tmp.13 32 46 51 ];
+        %tmp.14 = as %tmp.13 { (!Null) };
+        %tmp.15 = div %tmp.12 %tmp.14;
+        symbol [ toNumber %tmp.16 32 53 61 ];
+        %tmp.16 = getv function %tmp.15 :toNumber;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        lputv %totalSec.2 %tmp.17;
+        symbol [ totalSec %totalSec.2 32 16 24 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 33 12 ]
+        %tmp.18 = lgetv %totalSec.2;
+        symbol [ totalSec %tmp.18 33 21 29 ];
+        %tmp.19 = 60;
+        %tmp.20 = div %tmp.18 %tmp.19;
+        symbol [ format %tmp.21 33 36 42 ];
+        %tmp.21 = getv function %tmp.20 :format;
+        %tmp.22 = "%d";
+        %tmp.23 = invoke %tmp.20 %tmp.21(%tmp.22);
+        %tmp.24 = ":";
+        %tmp.25 = add %tmp.23 %tmp.24;
+        %tmp.26 = lgetv %totalSec.2;
+        symbol [ totalSec %tmp.26 33 58 66 ];
+        %tmp.27 = 60;
+        %tmp.28 = mod %tmp.26 %tmp.27;
+        symbol [ format %tmp.29 33 73 79 ];
+        %tmp.29 = getv function %tmp.28 :format;
+        %tmp.30 = "%02d";
+        %tmp.31 = invoke %tmp.28 %tmp.29(%tmp.30);
+        %tmp.32 = add %tmp.25 %tmp.31;
+        symbol [ _pace ? 33 12 17 ];
         putv self :_pace %tmp.32;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_27_15_29_8_stop:
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_24_8_29_8_if_end:
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 31 8 ]
-        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_stop" ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_42_34_8_stop:
+        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_8_36_8_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_8_36_8_if_else_false:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_34_15_36_8_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 35 12 ]
+        %tmp.33 = "--:--";
+        symbol [ _pace ? 35 12 17 ];
+        putv self :_pace %tmp.33;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_34_15_36_8_stop:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_31_8_36_8_if_end:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 38 8 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_stop" ]
         %d.3 = local;
-        symbol [ d %d.3 31 12 13 ];
-        %tmp.33 = lgetv %info;
-        symbol [ info %tmp.33 31 16 20 ];
-        symbol [ elapsedDistance %tmp.34 31 21 36 ];
-        %tmp.34 = getv %tmp.33 :elapsedDistance;
-        lputv %d.3 %tmp.34;
-        symbol [ d %d.3 31 12 13 ];
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 32 8 ]
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_begin:
-        %tmp.35 = lgetv %d.3;
-        symbol [ d %tmp.35 32 17 18 ];
-        %tmp.36 = null;
-        %tmp.37 = ne %tmp.35 %tmp.36;
-        bf %tmp.37 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_else_false;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_true:
-        %tmp.38 = lgetv %d.3;
-        symbol [ d %tmp.38 32 31 32 ];
-        %tmp.39 = as %tmp.38 { (!Null) };
-        %tmp.40 = 1000.0;
-        %tmp.41 = div %tmp.39 %tmp.40;
-        symbol [ format %tmp.42 32 43 49 ];
-        %tmp.42 = getv function %tmp.41 :format;
-        %tmp.43 = "%.2f";
-        %tmp.44 = invoke %tmp.41 %tmp.42(%tmp.43);
-        push %tmp.44;
-        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_end;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_else_false:
-        %tmp.45 = "-.--";
-        push %tmp.45;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_end:
-        %tmp.46 = phi [%tmp.37 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_begin] [%tmp.44 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_true] [%tmp.45 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_else_false] [%tmp.46 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_32_16_32_60_end];
-        symbol [ _dist ? 32 8 13 ];
-        putv self :_dist %tmp.46;
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 34 8 ]
-        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_stop" ]
+        symbol [ d %d.3 38 12 13 ];
+        %tmp.34 = lgetv %info;
+        symbol [ info %tmp.34 38 16 20 ];
+        symbol [ elapsedDistance %tmp.35 38 21 36 ];
+        %tmp.35 = getv %tmp.34 :elapsedDistance;
+        lputv %d.3 %tmp.35;
+        symbol [ d %d.3 38 12 13 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 39 8 ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_39_8_39_40_if_stmt:
+        %tmp.36 = lgetv %d.3;
+        symbol [ d %tmp.36 39 12 13 ];
+        %tmp.37 = null;
+        %tmp.38 = ne %tmp.36 %tmp.37;
+        bf %tmp.38 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_39_8_39_40_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_39_8_39_40_if_true:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_39_23_39_40_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 39 25 ]
+        %tmp.39 = lgetv %d.3;
+        symbol [ d %tmp.39 39 37 38 ];
+        %tmp.40 = as %tmp.39 { (!Null) };
+        symbol [ _lastDist ? 39 25 34 ];
+        putv self :_lastDist %tmp.40;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_39_23_39_40_stop:
+        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_39_8_39_40_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_39_8_39_40_if_end:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 40 8 ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_begin:
+        %tmp.41 = lgetv %d.3;
+        symbol [ d %tmp.41 40 17 18 ];
+        %tmp.42 = null;
+        %tmp.43 = ne %tmp.41 %tmp.42;
+        bf %tmp.43 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_else_false;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_true:
+        %tmp.44 = lgetv %d.3;
+        symbol [ d %tmp.44 40 31 32 ];
+        %tmp.45 = as %tmp.44 { (!Null) };
+        symbol [ METERS_PER_MILE %tmp.47 40 35 50 ];
+        %tmp.47 = getv ? :METERS_PER_MILE;
+        %tmp.48 = div %tmp.45 %tmp.47;
+        symbol [ format %tmp.49 40 52 58 ];
+        %tmp.49 = getv function %tmp.48 :format;
+        %tmp.50 = "%.2f";
+        %tmp.51 = invoke %tmp.48 %tmp.49(%tmp.50);
+        push %tmp.51;
+        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_else_false:
+        %tmp.52 = "-.--";
+        push %tmp.52;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_end:
+        %tmp.53 = phi [%tmp.43 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_begin] [%tmp.51 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_true] [%tmp.52 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_else_false] [%tmp.53 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_16_40_69_end];
+        symbol [ _dist ? 40 8 13 ];
+        putv self :_dist %tmp.53;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 42 8 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_stop" ]
         %t.4 = local;
-        symbol [ t %t.4 34 12 13 ];
-        %tmp.47 = lgetv %info;
-        symbol [ info %tmp.47 34 16 20 ];
-        symbol [ timerTime %tmp.48 34 21 30 ];
-        %tmp.48 = getv %tmp.47 :timerTime;
-        lputv %t.4 %tmp.48;
-        symbol [ t %t.4 34 12 13 ];
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 35 8 ]
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_8_42_8_if_stmt:
-        %tmp.49 = lgetv %t.4;
-        symbol [ t %tmp.49 35 12 13 ];
-        %tmp.50 = null;
-        %tmp.51 = ne %tmp.49 %tmp.50;
-        bf %tmp.51 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_8_42_8_if_else_false;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_8_42_8_if_true:
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_23_40_8_start:
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 36 12 ]
-        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_23_40_8_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_23_40_8_stop" ]
-        %s.5 = local;
-        symbol [ s %s.5 36 16 17 ];
-        %tmp.52 = lgetv %t.4;
-        symbol [ t %tmp.52 36 20 21 ];
-        %tmp.53 = as %tmp.52 { (!Null) };
-        %tmp.54 = 1000;
-        %tmp.55 = div %tmp.53 %tmp.54;
-        lputv %s.5 %tmp.55;
-        symbol [ s %s.5 36 16 17 ];
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 37 12 ]
-        %tmp.56 = lgetv %s.5;
-        symbol [ s %tmp.56 37 24 25 ];
-        %tmp.57 = 3600;
-        %tmp.58 = div %tmp.56 %tmp.57;
-        symbol [ format %tmp.59 37 34 40 ];
-        %tmp.59 = getv function %tmp.58 :format;
-        %tmp.60 = "%d";
-        %tmp.61 = invoke %tmp.58 %tmp.59(%tmp.60);
-        %tmp.62 = ":";
-        %tmp.63 = add %tmp.61 %tmp.62;
-        %tmp.64 = lgetv %s.5;
-        symbol [ s %tmp.64 38 25 26 ];
-        %tmp.65 = 3600;
-        %tmp.66 = mod %tmp.64 %tmp.65;
-        %tmp.67 = 60;
-        %tmp.68 = div %tmp.66 %tmp.67;
-        symbol [ format %tmp.69 38 41 47 ];
-        %tmp.69 = getv function %tmp.68 :format;
-        %tmp.70 = "%02d";
-        %tmp.71 = invoke %tmp.68 %tmp.69(%tmp.70);
-        %tmp.72 = add %tmp.63 %tmp.71;
-        %tmp.73 = ":";
-        %tmp.74 = add %tmp.72 %tmp.73;
-        %tmp.75 = lgetv %s.5;
-        symbol [ s %tmp.75 39 24 25 ];
-        %tmp.76 = 60;
-        %tmp.77 = mod %tmp.75 %tmp.76;
-        symbol [ format %tmp.78 39 32 38 ];
-        %tmp.78 = getv function %tmp.77 :format;
-        %tmp.79 = "%02d";
-        %tmp.80 = invoke %tmp.77 %tmp.78(%tmp.79);
-        %tmp.81 = add %tmp.74 %tmp.80;
-        symbol [ _elapsed ? 37 12 20 ];
-        putv self :_elapsed %tmp.81;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_23_40_8_stop:
-        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_8_42_8_if_end;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_8_42_8_if_else_false:
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_15_42_8_start:
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 41 12 ]
-        %tmp.82 = "-:--:--";
-        symbol [ _elapsed ? 41 12 20 ];
-        putv self :_elapsed %tmp.82;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_40_15_42_8_stop:
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_35_8_42_8_if_end:
+        symbol [ t %t.4 42 12 13 ];
+        %tmp.54 = lgetv %info;
+        symbol [ info %tmp.54 42 16 20 ];
+        symbol [ timerTime %tmp.55 42 21 30 ];
+        %tmp.55 = getv %tmp.54 :timerTime;
+        lputv %t.4 %tmp.55;
+        symbol [ t %t.4 42 12 13 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 43 8 ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_43_8_43_40_if_stmt:
+        %tmp.56 = lgetv %t.4;
+        symbol [ t %tmp.56 43 12 13 ];
+        %tmp.57 = null;
+        %tmp.58 = ne %tmp.56 %tmp.57;
+        bf %tmp.58 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_43_8_43_40_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_43_8_43_40_if_true:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_43_23_43_40_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 43 25 ]
+        %tmp.59 = lgetv %t.4;
+        symbol [ t %tmp.59 43 37 38 ];
+        %tmp.60 = as %tmp.59 { (!Null) };
+        symbol [ _lastTime ? 43 25 34 ];
+        putv self :_lastTime %tmp.60;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_43_23_43_40_stop:
+        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_43_8_43_40_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_43_8_43_40_if_end:
 [ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 44 8 ]
-        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_stop" ]
-        %h.6 = local;
-        symbol [ h %h.6 44 12 13 ];
-        %tmp.83 = lgetv %info;
-        symbol [ info %tmp.83 44 16 20 ];
-        symbol [ currentHeartRate %tmp.84 44 21 37 ];
-        %tmp.84 = getv %tmp.83 :currentHeartRate;
-        lputv %h.6 %tmp.84;
-        symbol [ h %h.6 44 12 13 ];
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 45 8 ]
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_begin:
-        %tmp.85 = lgetv %h.6;
-        symbol [ h %tmp.85 45 15 16 ];
-        %tmp.86 = null;
-        %tmp.87 = ne %tmp.85 %tmp.86;
-        bf %tmp.87 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_else_false;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_true:
-        %tmp.88 = lgetv %h.6;
-        symbol [ h %tmp.88 45 28 29 ];
-        %tmp.89 = as %tmp.88 { (!Null) };
-        symbol [ format %tmp.90 45 30 36 ];
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_8_51_8_if_stmt:
+        %tmp.61 = lgetv %t.4;
+        symbol [ t %tmp.61 44 12 13 ];
+        %tmp.62 = null;
+        %tmp.63 = ne %tmp.61 %tmp.62;
+        bf %tmp.63 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_8_51_8_if_else_false;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_8_51_8_if_true:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_23_49_8_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 45 12 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_23_49_8_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_23_49_8_stop" ]
+        %s.5 = local;
+        symbol [ s %s.5 45 16 17 ];
+        %tmp.64 = lgetv %t.4;
+        symbol [ t %tmp.64 45 20 21 ];
+        %tmp.65 = as %tmp.64 { (!Null) };
+        %tmp.66 = 1000;
+        %tmp.67 = div %tmp.65 %tmp.66;
+        lputv %s.5 %tmp.67;
+        symbol [ s %s.5 45 16 17 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 46 12 ]
+        %tmp.68 = lgetv %s.5;
+        symbol [ s %tmp.68 46 24 25 ];
+        %tmp.69 = 3600;
+        %tmp.70 = div %tmp.68 %tmp.69;
+        symbol [ format %tmp.71 46 34 40 ];
+        %tmp.71 = getv function %tmp.70 :format;
+        %tmp.72 = "%d";
+        %tmp.73 = invoke %tmp.70 %tmp.71(%tmp.72);
+        %tmp.74 = ":";
+        %tmp.75 = add %tmp.73 %tmp.74;
+        %tmp.76 = lgetv %s.5;
+        symbol [ s %tmp.76 47 25 26 ];
+        %tmp.77 = 3600;
+        %tmp.78 = mod %tmp.76 %tmp.77;
+        %tmp.79 = 60;
+        %tmp.80 = div %tmp.78 %tmp.79;
+        symbol [ format %tmp.81 47 41 47 ];
+        %tmp.81 = getv function %tmp.80 :format;
+        %tmp.82 = "%02d";
+        %tmp.83 = invoke %tmp.80 %tmp.81(%tmp.82);
+        %tmp.84 = add %tmp.75 %tmp.83;
+        %tmp.85 = ":";
+        %tmp.86 = add %tmp.84 %tmp.85;
+        %tmp.87 = lgetv %s.5;
+        symbol [ s %tmp.87 48 24 25 ];
+        %tmp.88 = 60;
+        %tmp.89 = mod %tmp.87 %tmp.88;
+        symbol [ format %tmp.90 48 32 38 ];
         %tmp.90 = getv function %tmp.89 :format;
-        %tmp.91 = "%d";
+        %tmp.91 = "%02d";
         %tmp.92 = invoke %tmp.89 %tmp.90(%tmp.91);
-        push %tmp.92;
-        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_end;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_else_false:
-        %tmp.93 = "--";
-        push %tmp.93;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_end:
-        %tmp.94 = phi [%tmp.87 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_begin] [%tmp.92 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_true] [%tmp.93 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_else_false] [%tmp.94 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_45_14_45_45_end];
-        symbol [ _hr ? 45 8 11 ];
-        putv self :_hr %tmp.94;
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 47 8 ]
-        symbol [ _tick %tmp.97 47 8 13 ];
-        %tmp.97 = getv ? :_tick;
-        %tmp.98 = add %tmp.97 1;
-        symbol [ _tick ? 47 8 13 ];
-        putv self :_tick dup %tmp.98;
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 48 8 ]
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_48_8_55_8_if_stmt:
-        symbol [ _tick %tmp.100 48 12 17 ];
-        %tmp.100 = getv ? :_tick;
-        %tmp.101 = 5;
-        %tmp.102 = mod %tmp.100 %tmp.101;
-        %tmp.103 = 0;
-        %tmp.104 = eq %tmp.102 %tmp.103;
-        bf %tmp.104 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_48_8_55_8_if_end;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_48_8_55_8_if_true:
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_48_28_55_8_start:
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 49 12 ]
-        symbol [ Communications %tmp.105 49 12 26 ];
-        %tmp.105 = getm $.Toybox.Communications;
-        symbol [ transmit %tmp.106 49 27 35 ];
-        %tmp.106 = getv function %tmp.105 :transmit;
-        %tmp.107 = newd 4;
-        %tmp.108 = "pace";
-        symbol [ _pace %tmp.110 50 26 31 ];
-        %tmp.110 = getv ? :_pace;
-        %tmp.111 = dup %tmp.107;
-        %tmp.112 = aputv %tmp.111 %tmp.108 %tmp.110;
-        %tmp.113 = "dist";
-        symbol [ _dist %tmp.115 51 26 31 ];
-        %tmp.115 = getv ? :_dist;
-        %tmp.116 = dup %tmp.112;
-        %tmp.117 = aputv %tmp.116 %tmp.113 %tmp.115;
-        %tmp.118 = "time";
-        symbol [ _elapsed %tmp.120 52 26 34 ];
-        %tmp.120 = getv ? :_elapsed;
-        %tmp.121 = dup %tmp.117;
-        %tmp.122 = aputv %tmp.121 %tmp.118 %tmp.120;
-        %tmp.123 = "hr";
-        symbol [ _hr %tmp.125 53 26 29 ];
-        %tmp.125 = getv ? :_hr;
-        %tmp.126 = dup %tmp.122;
-        %tmp.127 = aputv %tmp.126 %tmp.123 %tmp.125;
-        %tmp.128 = null;
-        symbol [ $ %tmp.132 54 25 26 ];
-        %tmp.132 = getm $;
-        symbol [ SendListener %tmp.133 54 27 39 ];
-        %tmp.133 = getv %tmp.132 :SendListener;
-        %tmp.129 = newc %tmp.133 ();
-        invoke %tmp.105 %tmp.106(%tmp.127, %tmp.128, %tmp.129);
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_48_28_55_8_stop:
-        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_48_8_55_8_if_end;
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_48_8_55_8_if_end:
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_22_59_56_4_stop:
+        %tmp.93 = add %tmp.86 %tmp.92;
+        symbol [ _elapsed ? 46 12 20 ];
+        putv self :_elapsed %tmp.93;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_23_49_8_stop:
+        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_8_51_8_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_8_51_8_if_else_false:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_49_15_51_8_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 50 12 ]
+        %tmp.94 = "-:--:--";
+        symbol [ _elapsed ? 50 12 20 ];
+        putv self :_elapsed %tmp.94;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_49_15_51_8_stop:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_44_8_51_8_if_end:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 53 8 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_stop" ]
+        %h.6 = local;
+        symbol [ h %h.6 53 12 13 ];
+        %tmp.95 = lgetv %info;
+        symbol [ info %tmp.95 53 16 20 ];
+        symbol [ currentHeartRate %tmp.96 53 21 37 ];
+        %tmp.96 = getv %tmp.95 :currentHeartRate;
+        lputv %h.6 %tmp.96;
+        symbol [ h %h.6 53 12 13 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 54 8 ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_begin:
+        %tmp.97 = lgetv %h.6;
+        symbol [ h %tmp.97 54 15 16 ];
+        %tmp.98 = null;
+        %tmp.99 = ne %tmp.97 %tmp.98;
+        bf %tmp.99 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_else_false;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_true:
+        %tmp.100 = lgetv %h.6;
+        symbol [ h %tmp.100 54 28 29 ];
+        %tmp.101 = as %tmp.100 { (!Null) };
+        symbol [ format %tmp.102 54 30 36 ];
+        %tmp.102 = getv function %tmp.101 :format;
+        %tmp.103 = "%d";
+        %tmp.104 = invoke %tmp.101 %tmp.102(%tmp.103);
+        push %tmp.104;
+        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_else_false:
+        %tmp.105 = "--";
+        push %tmp.105;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_end:
+        %tmp.106 = phi [%tmp.99 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_begin] [%tmp.104 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_true] [%tmp.105 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_else_false] [%tmp.106 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_54_14_54_45_end];
+        symbol [ _hr ? 54 8 11 ];
+        putv self :_hr %tmp.106;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 56 8 ]
+        symbol [ Communications %tmp.107 56 8 22 ];
+        %tmp.107 = getm $.Toybox.Communications;
+        symbol [ transmit %tmp.108 56 23 31 ];
+        %tmp.108 = getv function %tmp.107 :transmit;
+        %tmp.109 = newd 4;
+        %tmp.110 = "pace";
+        symbol [ _pace %tmp.112 57 22 27 ];
+        %tmp.112 = getv ? :_pace;
+        %tmp.113 = dup %tmp.109;
+        %tmp.114 = aputv %tmp.113 %tmp.110 %tmp.112;
+        %tmp.115 = "dist";
+        symbol [ _dist %tmp.117 58 22 27 ];
+        %tmp.117 = getv ? :_dist;
+        %tmp.118 = dup %tmp.114;
+        %tmp.119 = aputv %tmp.118 %tmp.115 %tmp.117;
+        %tmp.120 = "time";
+        symbol [ _elapsed %tmp.122 59 22 30 ];
+        %tmp.122 = getv ? :_elapsed;
+        %tmp.123 = dup %tmp.119;
+        %tmp.124 = aputv %tmp.123 %tmp.120 %tmp.122;
+        %tmp.125 = "hr";
+        symbol [ _hr %tmp.127 60 22 25 ];
+        %tmp.127 = getv ? :_hr;
+        %tmp.128 = dup %tmp.124;
+        %tmp.129 = aputv %tmp.128 %tmp.125 %tmp.127;
+        %tmp.130 = null;
+        symbol [ $ %tmp.134 61 21 22 ];
+        %tmp.134 = getm $;
+        symbol [ SendListener %tmp.135 61 23 35 ];
+        %tmp.135 = getv %tmp.134 :SendListener;
+        %tmp.131 = newc %tmp.135 ();
+        invoke %tmp.107 %tmp.108(%tmp.129, %tmp.130, %tmp.131);
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_29_59_62_4_stop:
     }
-    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 58; @symbol_functiondef = [onUpdate,58,20,28]; @symbol_param<0> = [dc,58,29,31]; @symbol_param<0>_type<0> = [Dc,58,35,37]; ]
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 64; @symbol_functiondef = [onTimerLap,64,20,30]; ]
+    public
+    function onTimerLap() as Void {
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_64_41_75_4_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 65 8 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_64_41_75_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_64_41_75_4_stop" ]
+        %lapDist.1 = local;
+        symbol [ lapDist %lapDist.1 65 12 19 ];
+        symbol [ _lastDist %tmp.2 65 22 31 ];
+        %tmp.2 = getv ? :_lastDist;
+        symbol [ _lapStartDist %tmp.4 65 34 47 ];
+        %tmp.4 = getv ? :_lapStartDist;
+        %tmp.5 = sub %tmp.2 %tmp.4;
+        lputv %lapDist.1 %tmp.5;
+        symbol [ lapDist %lapDist.1 65 12 19 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 66 8 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_64_41_75_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_64_41_75_4_stop" ]
+        %lapTime.2 = local;
+        symbol [ lapTime %lapTime.2 66 12 19 ];
+        symbol [ _lastTime %tmp.7 66 22 31 ];
+        %tmp.7 = getv ? :_lastTime;
+        symbol [ _lapStartTime %tmp.9 66 34 47 ];
+        %tmp.9 = getv ? :_lapStartTime;
+        %tmp.10 = sub %tmp.7 %tmp.9;
+        lputv %lapTime.2 %tmp.10;
+        symbol [ lapTime %lapTime.2 66 12 19 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 67 8 ]
+        symbol [ _lastDist %tmp.12 67 24 33 ];
+        %tmp.12 = getv ? :_lastDist;
+        symbol [ _lapStartDist ? 67 8 21 ];
+        putv self :_lapStartDist %tmp.12;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 68 8 ]
+        symbol [ _lastTime %tmp.14 68 24 33 ];
+        %tmp.14 = getv ? :_lastTime;
+        symbol [ _lapStartTime ? 68 8 21 ];
+        putv self :_lapStartTime %tmp.14;
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 70 8 ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_8_74_8_if_stmt:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_12_70_37_begin:
+        %tmp.15 = lgetv %lapDist.1;
+        symbol [ lapDist %tmp.15 70 12 19 ];
+        %tmp.16 = 0;
+        %tmp.17 = gt %tmp.15 %tmp.16;
+        bf %tmp.17 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_8_74_8_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_27_70_37_true:
+        %tmp.18 = lgetv %lapTime.2;
+        symbol [ lapTime %tmp.18 70 27 34 ];
+        %tmp.19 = 0;
+        %tmp.20 = gt %tmp.18 %tmp.19;
+        push %tmp.20;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_27_70_37_end:
+        %tmp.21 = phi [%tmp.17 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_12_70_37_begin] [%tmp.20 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_27_70_37_true] [%tmp.21 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_27_70_37_end];
+        bf %tmp.21 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_8_74_8_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_8_74_8_if_true:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_40_74_8_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 71 12 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_40_74_8_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_40_74_8_stop" ]
+        %lapPaceSec.3 = local;
+        symbol [ lapPaceSec %lapPaceSec.3 71 16 26 ];
+        %tmp.22 = lgetv %lapTime.2;
+        symbol [ lapTime %tmp.22 71 31 38 ];
+        %tmp.23 = 1000.0;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        %tmp.25 = lgetv %lapDist.1;
+        symbol [ lapDist %tmp.25 71 52 59 ];
+        symbol [ METERS_PER_MILE %tmp.27 71 62 77 ];
+        %tmp.27 = getv ? :METERS_PER_MILE;
+        %tmp.28 = div %tmp.25 %tmp.27;
+        %tmp.29 = div %tmp.24 %tmp.28;
+        symbol [ toNumber %tmp.30 71 80 88 ];
+        %tmp.30 = getv function %tmp.29 :toNumber;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        lputv %lapPaceSec.3 %tmp.31;
+        symbol [ lapPaceSec %lapPaceSec.3 71 16 26 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 72 12 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_40_74_8_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_40_74_8_stop" ]
+        %lapPace.4 = local;
+        symbol [ lapPace %lapPace.4 72 16 23 ];
+        %tmp.32 = lgetv %lapPaceSec.3;
+        symbol [ lapPaceSec %tmp.32 72 27 37 ];
+        %tmp.33 = 60;
+        %tmp.34 = div %tmp.32 %tmp.33;
+        symbol [ format %tmp.35 72 44 50 ];
+        %tmp.35 = getv function %tmp.34 :format;
+        %tmp.36 = "%d";
+        %tmp.37 = invoke %tmp.34 %tmp.35(%tmp.36);
+        %tmp.38 = ":";
+        %tmp.39 = add %tmp.37 %tmp.38;
+        %tmp.40 = lgetv %lapPaceSec.3;
+        symbol [ lapPaceSec %tmp.40 72 66 76 ];
+        %tmp.41 = 60;
+        %tmp.42 = mod %tmp.40 %tmp.41;
+        symbol [ format %tmp.43 72 83 89 ];
+        %tmp.43 = getv function %tmp.42 :format;
+        %tmp.44 = "%02d";
+        %tmp.45 = invoke %tmp.42 %tmp.43(%tmp.44);
+        %tmp.46 = add %tmp.39 %tmp.45;
+        lputv %lapPace.4 %tmp.46;
+        symbol [ lapPace %lapPace.4 72 16 23 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 73 12 ]
+        symbol [ Communications %tmp.47 73 12 26 ];
+        %tmp.47 = getm $.Toybox.Communications;
+        symbol [ transmit %tmp.48 73 27 35 ];
+        %tmp.48 = getv function %tmp.47 :transmit;
+        %tmp.49 = newd 1;
+        %tmp.50 = "lap_pace";
+        %tmp.51 = lgetv %lapPace.4;
+        symbol [ lapPace %tmp.51 73 51 58 ];
+        %tmp.52 = dup %tmp.49;
+        %tmp.53 = aputv %tmp.52 %tmp.50 %tmp.51;
+        %tmp.54 = null;
+        symbol [ $ %tmp.58 73 71 72 ];
+        %tmp.58 = getm $;
+        symbol [ SendListener %tmp.59 73 73 85 ];
+        %tmp.59 = getv %tmp.58 :SendListener;
+        %tmp.55 = newc %tmp.59 ();
+        invoke %tmp.47 %tmp.48(%tmp.53, %tmp.54, %tmp.55);
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_40_74_8_stop:
+        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_8_74_8_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_70_8_74_8_if_end:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_64_41_75_4_stop:
+    }
+    [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 77; @symbol_functiondef = [onUpdate,77,20,28]; @symbol_param<0> = [dc,77,29,31]; @symbol_param<0>_type<0> = [Dc,77,35,37]; ]
     public
     function onUpdate(dc as Dc) as Void {
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_58_47_83_4_start:
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 59 8 ]
-        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_58_47_83_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_58_47_83_4_stop" ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_77_47_88_4_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 78 8 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_77_47_88_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_77_47_88_4_stop" ]
         %w.1 = local;
-        symbol [ w %w.1 59 12 13 ];
+        symbol [ w %w.1 78 12 13 ];
         %tmp.1 = lgetv %dc;
-        symbol [ dc %tmp.1 59 17 19 ];
-        symbol [ getWidth %tmp.2 59 20 28 ];
+        symbol [ dc %tmp.1 78 16 18 ];
+        symbol [ getWidth %tmp.2 78 19 27 ];
         %tmp.2 = getv function %tmp.1 :getWidth;
         %tmp.3 = invoke %tmp.1 %tmp.2();
         lputv %w.1 %tmp.3;
-        symbol [ w %w.1 59 12 13 ];
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 60 8 ]
-        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_58_47_83_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_58_47_83_4_stop" ]
+        symbol [ w %w.1 78 12 13 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 79 8 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_77_47_88_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_77_47_88_4_stop" ]
         %h.2 = local;
-        symbol [ h %h.2 60 12 13 ];
+        symbol [ h %h.2 79 12 13 ];
         %tmp.4 = lgetv %dc;
-        symbol [ dc %tmp.4 60 17 19 ];
-        symbol [ getHeight %tmp.5 60 20 29 ];
+        symbol [ dc %tmp.4 79 16 18 ];
+        symbol [ getHeight %tmp.5 79 19 28 ];
         %tmp.5 = getv function %tmp.4 :getHeight;
         %tmp.6 = invoke %tmp.4 %tmp.5();
         lputv %h.2 %tmp.6;
-        symbol [ h %h.2 60 12 13 ];
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 61 8 ]
-        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_58_47_83_4_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_58_47_83_4_stop" ]
-        %cx.3 = local;
-        symbol [ cx %cx.3 61 12 14 ];
-        %tmp.7 = lgetv %w.1;
-        symbol [ w %tmp.7 61 17 18 ];
-        %tmp.8 = 2;
-        %tmp.9 = div %tmp.7 %tmp.8;
-        lputv %cx.3 %tmp.9;
-        symbol [ cx %cx.3 61 12 14 ];
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 63 8 ]
-        %tmp.10 = lgetv %dc;
-        symbol [ dc %tmp.10 63 8 10 ];
-        symbol [ setColor %tmp.11 63 11 19 ];
-        %tmp.11 = getv function %tmp.10 :setColor;
-        symbol [ Graphics %tmp.12 63 20 28 ];
-        %tmp.12 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.13 63 29 46 ];
-        %tmp.13 = getv %tmp.12 :COLOR_TRANSPARENT;
-        symbol [ Graphics %tmp.14 63 48 56 ];
-        %tmp.14 = getm $.Toybox.Graphics;
-        symbol [ COLOR_BLACK %tmp.15 63 57 68 ];
-        %tmp.15 = getv %tmp.14 :COLOR_BLACK;
-        invoke %tmp.10 %tmp.11(%tmp.13, %tmp.15);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 64 8 ]
-        %tmp.16 = lgetv %dc;
-        symbol [ dc %tmp.16 64 8 10 ];
-        symbol [ clear %tmp.17 64 11 16 ];
-        %tmp.17 = getv function %tmp.16 :clear;
-        invoke %tmp.16 %tmp.17();
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 66 8 ]
-        %tmp.18 = lgetv %dc;
-        symbol [ dc %tmp.18 66 8 10 ];
-        symbol [ setColor %tmp.19 66 11 19 ];
-        %tmp.19 = getv function %tmp.18 :setColor;
-        symbol [ Graphics %tmp.20 66 20 28 ];
-        %tmp.20 = getm $.Toybox.Graphics;
-        symbol [ COLOR_LT_GRAY %tmp.21 66 29 42 ];
-        %tmp.21 = getv %tmp.20 :COLOR_LT_GRAY;
-        symbol [ Graphics %tmp.22 66 44 52 ];
-        %tmp.22 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.23 66 53 70 ];
-        %tmp.23 = getv %tmp.22 :COLOR_TRANSPARENT;
-        invoke %tmp.18 %tmp.19(%tmp.21, %tmp.23);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 67 8 ]
-        %tmp.24 = lgetv %dc;
-        symbol [ dc %tmp.24 67 8 10 ];
-        symbol [ drawText %tmp.25 67 11 19 ];
-        %tmp.25 = getv function %tmp.24 :drawText;
-        %tmp.26 = lgetv %cx.3;
-        symbol [ cx %tmp.26 67 20 22 ];
-        %tmp.27 = lgetv %h.2;
-        symbol [ h %tmp.27 67 24 25 ];
-        %tmp.28 = 0.05;
-        %tmp.29 = mul %tmp.27 %tmp.28;
-        symbol [ Graphics %tmp.30 67 34 42 ];
-        %tmp.30 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.31 67 43 52 ];
-        %tmp.31 = getv %tmp.30 :FONT_TINY;
-        %tmp.32 = "PACE";
-        symbol [ Graphics %tmp.33 67 62 70 ];
-        %tmp.33 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.34 67 71 90 ];
-        %tmp.34 = getv %tmp.33 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.24 %tmp.25(%tmp.26, %tmp.29, %tmp.31, %tmp.32, %tmp.34);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 68 8 ]
-        %tmp.35 = lgetv %dc;
-        symbol [ dc %tmp.35 68 8 10 ];
-        symbol [ setColor %tmp.36 68 11 19 ];
-        %tmp.36 = getv function %tmp.35 :setColor;
-        symbol [ Graphics %tmp.37 68 20 28 ];
-        %tmp.37 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.38 68 29 40 ];
-        %tmp.38 = getv %tmp.37 :COLOR_WHITE;
-        symbol [ Graphics %tmp.39 68 42 50 ];
-        %tmp.39 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.40 68 51 68 ];
-        %tmp.40 = getv %tmp.39 :COLOR_TRANSPARENT;
-        invoke %tmp.35 %tmp.36(%tmp.38, %tmp.40);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 69 8 ]
-        %tmp.41 = lgetv %dc;
-        symbol [ dc %tmp.41 69 8 10 ];
-        symbol [ drawText %tmp.42 69 11 19 ];
-        %tmp.42 = getv function %tmp.41 :drawText;
-        %tmp.43 = lgetv %cx.3;
-        symbol [ cx %tmp.43 69 20 22 ];
-        %tmp.44 = lgetv %h.2;
-        symbol [ h %tmp.44 69 24 25 ];
-        %tmp.45 = 0.18;
-        %tmp.46 = mul %tmp.44 %tmp.45;
-        symbol [ Graphics %tmp.47 69 34 42 ];
-        %tmp.47 = getm $.Toybox.Graphics;
-        symbol [ FONT_LARGE %tmp.48 69 43 53 ];
-        %tmp.48 = getv %tmp.47 :FONT_LARGE;
-        symbol [ _pace %tmp.50 69 55 60 ];
-        %tmp.50 = getv ? :_pace;
-        symbol [ Graphics %tmp.51 69 62 70 ];
-        %tmp.51 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.52 69 71 90 ];
-        %tmp.52 = getv %tmp.51 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.41 %tmp.42(%tmp.43, %tmp.46, %tmp.48, %tmp.50, %tmp.52);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 71 8 ]
-        %tmp.53 = lgetv %dc;
-        symbol [ dc %tmp.53 71 8 10 ];
-        symbol [ setColor %tmp.54 71 11 19 ];
-        %tmp.54 = getv function %tmp.53 :setColor;
-        symbol [ Graphics %tmp.55 71 20 28 ];
-        %tmp.55 = getm $.Toybox.Graphics;
-        symbol [ COLOR_LT_GRAY %tmp.56 71 29 42 ];
-        %tmp.56 = getv %tmp.55 :COLOR_LT_GRAY;
-        symbol [ Graphics %tmp.57 71 44 52 ];
-        %tmp.57 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.58 71 53 70 ];
-        %tmp.58 = getv %tmp.57 :COLOR_TRANSPARENT;
-        invoke %tmp.53 %tmp.54(%tmp.56, %tmp.58);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 72 8 ]
-        %tmp.59 = lgetv %dc;
-        symbol [ dc %tmp.59 72 8 10 ];
-        symbol [ drawText %tmp.60 72 11 19 ];
-        %tmp.60 = getv function %tmp.59 :drawText;
-        %tmp.61 = lgetv %cx.3;
-        symbol [ cx %tmp.61 72 20 22 ];
-        %tmp.62 = lgetv %h.2;
-        symbol [ h %tmp.62 72 24 25 ];
-        %tmp.63 = 0.42;
-        %tmp.64 = mul %tmp.62 %tmp.63;
-        symbol [ Graphics %tmp.65 72 34 42 ];
-        %tmp.65 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.66 72 43 52 ];
-        %tmp.66 = getv %tmp.65 :FONT_TINY;
-        %tmp.67 = "KM";
-        symbol [ Graphics %tmp.68 72 60 68 ];
-        %tmp.68 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.69 72 69 88 ];
-        %tmp.69 = getv %tmp.68 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.59 %tmp.60(%tmp.61, %tmp.64, %tmp.66, %tmp.67, %tmp.69);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 73 8 ]
-        %tmp.70 = lgetv %dc;
-        symbol [ dc %tmp.70 73 8 10 ];
-        symbol [ setColor %tmp.71 73 11 19 ];
-        %tmp.71 = getv function %tmp.70 :setColor;
-        symbol [ Graphics %tmp.72 73 20 28 ];
-        %tmp.72 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.73 73 29 40 ];
-        %tmp.73 = getv %tmp.72 :COLOR_WHITE;
-        symbol [ Graphics %tmp.74 73 42 50 ];
-        %tmp.74 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.75 73 51 68 ];
-        %tmp.75 = getv %tmp.74 :COLOR_TRANSPARENT;
-        invoke %tmp.70 %tmp.71(%tmp.73, %tmp.75);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 74 8 ]
-        %tmp.76 = lgetv %dc;
-        symbol [ dc %tmp.76 74 8 10 ];
-        symbol [ drawText %tmp.77 74 11 19 ];
-        %tmp.77 = getv function %tmp.76 :drawText;
-        %tmp.78 = lgetv %cx.3;
-        symbol [ cx %tmp.78 74 20 22 ];
-        %tmp.79 = lgetv %h.2;
-        symbol [ h %tmp.79 74 24 25 ];
-        %tmp.80 = 0.52;
-        %tmp.81 = mul %tmp.79 %tmp.80;
-        symbol [ Graphics %tmp.82 74 34 42 ];
-        %tmp.82 = getm $.Toybox.Graphics;
-        symbol [ FONT_MEDIUM %tmp.83 74 43 54 ];
-        %tmp.83 = getv %tmp.82 :FONT_MEDIUM;
-        symbol [ _dist %tmp.85 74 56 61 ];
-        %tmp.85 = getv ? :_dist;
-        symbol [ Graphics %tmp.86 74 63 71 ];
-        %tmp.86 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.87 74 72 91 ];
-        %tmp.87 = getv %tmp.86 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.76 %tmp.77(%tmp.78, %tmp.81, %tmp.83, %tmp.85, %tmp.87);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 76 8 ]
-        %tmp.88 = lgetv %dc;
-        symbol [ dc %tmp.88 76 8 10 ];
-        symbol [ setColor %tmp.89 76 11 19 ];
-        %tmp.89 = getv function %tmp.88 :setColor;
-        symbol [ Graphics %tmp.90 76 20 28 ];
-        %tmp.90 = getm $.Toybox.Graphics;
-        symbol [ COLOR_LT_GRAY %tmp.91 76 29 42 ];
-        %tmp.91 = getv %tmp.90 :COLOR_LT_GRAY;
-        symbol [ Graphics %tmp.92 76 44 52 ];
-        %tmp.92 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.93 76 53 70 ];
-        %tmp.93 = getv %tmp.92 :COLOR_TRANSPARENT;
-        invoke %tmp.88 %tmp.89(%tmp.91, %tmp.93);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 77 8 ]
-        %tmp.94 = lgetv %dc;
-        symbol [ dc %tmp.94 77 8 10 ];
-        symbol [ drawText %tmp.95 77 11 19 ];
-        %tmp.95 = getv function %tmp.94 :drawText;
-        %tmp.96 = lgetv %cx.3;
-        symbol [ cx %tmp.96 77 20 22 ];
-        %tmp.97 = lgetv %h.2;
-        symbol [ h %tmp.97 77 24 25 ];
-        %tmp.98 = 0.68;
-        %tmp.99 = mul %tmp.97 %tmp.98;
-        symbol [ Graphics %tmp.100 77 34 42 ];
-        %tmp.100 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.101 77 43 52 ];
-        %tmp.101 = getv %tmp.100 :FONT_TINY;
-        %tmp.102 = "TIME";
-        symbol [ Graphics %tmp.103 77 62 70 ];
-        %tmp.103 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.104 77 71 90 ];
-        %tmp.104 = getv %tmp.103 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.94 %tmp.95(%tmp.96, %tmp.99, %tmp.101, %tmp.102, %tmp.104);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 78 8 ]
-        %tmp.105 = lgetv %dc;
-        symbol [ dc %tmp.105 78 8 10 ];
-        symbol [ setColor %tmp.106 78 11 19 ];
-        %tmp.106 = getv function %tmp.105 :setColor;
-        symbol [ Graphics %tmp.107 78 20 28 ];
-        %tmp.107 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.108 78 29 40 ];
-        %tmp.108 = getv %tmp.107 :COLOR_WHITE;
-        symbol [ Graphics %tmp.109 78 42 50 ];
-        %tmp.109 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.110 78 51 68 ];
-        %tmp.110 = getv %tmp.109 :COLOR_TRANSPARENT;
-        invoke %tmp.105 %tmp.106(%tmp.108, %tmp.110);
-[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 79 8 ]
-        %tmp.111 = lgetv %dc;
-        symbol [ dc %tmp.111 79 8 10 ];
-        symbol [ drawText %tmp.112 79 11 19 ];
-        %tmp.112 = getv function %tmp.111 :drawText;
-        %tmp.113 = lgetv %cx.3;
-        symbol [ cx %tmp.113 79 20 22 ];
-        %tmp.114 = lgetv %h.2;
-        symbol [ h %tmp.114 79 24 25 ];
-        %tmp.115 = 0.76;
-        %tmp.116 = mul %tmp.114 %tmp.115;
-        symbol [ Graphics %tmp.117 79 34 42 ];
-        %tmp.117 = getm $.Toybox.Graphics;
-        symbol [ FONT_SMALL %tmp.118 79 43 53 ];
-        %tmp.118 = getv %tmp.117 :FONT_SMALL;
-        symbol [ _elapsed %tmp.120 79 55 63 ];
-        %tmp.120 = getv ? :_elapsed;
-        symbol [ Graphics %tmp.121 79 65 73 ];
-        %tmp.121 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.122 79 74 93 ];
-        %tmp.122 = getv %tmp.121 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.111 %tmp.112(%tmp.113, %tmp.116, %tmp.118, %tmp.120, %tmp.122);
+        symbol [ h %h.2 79 12 13 ];
 [ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 81 8 ]
-        %tmp.123 = lgetv %dc;
-        symbol [ dc %tmp.123 81 8 10 ];
-        symbol [ setColor %tmp.124 81 11 19 ];
-        %tmp.124 = getv function %tmp.123 :setColor;
-        symbol [ Graphics %tmp.125 81 20 28 ];
-        %tmp.125 = getm $.Toybox.Graphics;
-        symbol [ COLOR_RED %tmp.126 81 29 38 ];
-        %tmp.126 = getv %tmp.125 :COLOR_RED;
-        symbol [ Graphics %tmp.127 81 40 48 ];
-        %tmp.127 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.128 81 49 66 ];
-        %tmp.128 = getv %tmp.127 :COLOR_TRANSPARENT;
-        invoke %tmp.123 %tmp.124(%tmp.126, %tmp.128);
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 81 8 10 ];
+        symbol [ setColor %tmp.8 81 11 19 ];
+        %tmp.8 = getv function %tmp.7 :setColor;
+        symbol [ Graphics %tmp.9 81 20 28 ];
+        %tmp.9 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.10 81 29 46 ];
+        %tmp.10 = getv %tmp.9 :COLOR_TRANSPARENT;
+        symbol [ Graphics %tmp.11 81 48 56 ];
+        %tmp.11 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.12 81 57 68 ];
+        %tmp.12 = getv %tmp.11 :COLOR_BLACK;
+        invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
 [ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 82 8 ]
-        %tmp.129 = lgetv %dc;
-        symbol [ dc %tmp.129 82 8 10 ];
-        symbol [ drawText %tmp.130 82 11 19 ];
-        %tmp.130 = getv function %tmp.129 :drawText;
-        %tmp.131 = lgetv %cx.3;
-        symbol [ cx %tmp.131 82 20 22 ];
-        %tmp.132 = lgetv %h.2;
-        symbol [ h %tmp.132 82 24 25 ];
-        %tmp.133 = 0.88;
-        %tmp.134 = mul %tmp.132 %tmp.133;
-        symbol [ Graphics %tmp.135 82 34 42 ];
-        %tmp.135 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.136 82 43 52 ];
-        %tmp.136 = getv %tmp.135 :FONT_TINY;
-        symbol [ _hr %tmp.138 82 54 57 ];
-        %tmp.138 = getv ? :_hr;
-        %tmp.139 = " bpm";
-        %tmp.140 = add %tmp.138 %tmp.139;
-        symbol [ Graphics %tmp.141 82 68 76 ];
-        %tmp.141 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.142 82 77 96 ];
-        %tmp.142 = getv %tmp.141 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.129 %tmp.130(%tmp.131, %tmp.134, %tmp.136, %tmp.140, %tmp.142);
-_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_58_47_83_4_stop:
+        %tmp.13 = lgetv %dc;
+        symbol [ dc %tmp.13 82 8 10 ];
+        symbol [ clear %tmp.14 82 11 16 ];
+        %tmp.14 = getv function %tmp.13 :clear;
+        invoke %tmp.13 %tmp.14();
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 84 8 ]
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_84_8_87_8_if_stmt:
+        symbol [ _logo %tmp.16 84 12 17 ];
+        %tmp.16 = getv ? :_logo;
+        %tmp.17 = null;
+        %tmp.18 = ne %tmp.16 %tmp.17;
+        bf %tmp.18 @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_84_8_87_8_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_84_8_87_8_if_true:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_84_27_87_8_start:
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 85 12 ]
+        [ "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_84_27_87_8_start" "_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_84_27_87_8_stop" ]
+        %logo.3 = local;
+        symbol [ logo %logo.3 85 16 20 ];
+        symbol [ _logo %tmp.20 85 23 28 ];
+        %tmp.20 = getv ? :_logo;
+        %tmp.21 = as %tmp.20 { (!Null) };
+        %tmp.22 = as %tmp.21 BitmapResource;
+        symbol [ BitmapResource %tmp.22 85 32 46 ];
+        lputv %logo.3 %tmp.22;
+        symbol [ logo %logo.3 85 16 20 ];
+[ "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" 86 12 ]
+        %tmp.23 = lgetv %dc;
+        symbol [ dc %tmp.23 86 12 14 ];
+        symbol [ drawBitmap %tmp.24 86 15 25 ];
+        %tmp.24 = getv function %tmp.23 :drawBitmap;
+        %tmp.25 = lgetv %w.1;
+        symbol [ w %tmp.25 86 27 28 ];
+        %tmp.26 = lgetv %logo.3;
+        symbol [ logo %tmp.26 86 31 35 ];
+        symbol [ getWidth %tmp.27 86 36 44 ];
+        %tmp.27 = getv function %tmp.26 :getWidth;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        %tmp.29 = sub %tmp.25 %tmp.28;
+        %tmp.30 = 2;
+        %tmp.31 = div %tmp.29 %tmp.30;
+        %tmp.32 = lgetv %h.2;
+        symbol [ h %tmp.32 86 54 55 ];
+        %tmp.33 = lgetv %logo.3;
+        symbol [ logo %tmp.33 86 58 62 ];
+        symbol [ getHeight %tmp.34 86 63 72 ];
+        %tmp.34 = getv function %tmp.33 :getHeight;
+        %tmp.35 = invoke %tmp.33 %tmp.34();
+        %tmp.36 = sub %tmp.32 %tmp.35;
+        %tmp.37 = 2;
+        %tmp.38 = div %tmp.36 %tmp.37;
+        %tmp.39 = lgetv %logo.3;
+        symbol [ logo %tmp.39 86 81 85 ];
+        invoke %tmp.23 %tmp.24(%tmp.31, %tmp.38, %tmp.39);
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_84_27_87_8_stop:
+        goto @_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_84_8_87_8_if_end;
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_84_8_87_8_if_end:
+_Users_mikes_claude_code_GarminEnduro3Connect_watch_app_source_EnduroDataView_mc_77_47_88_4_stop:
     }
 }
 [ @file = "/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc"; @line = 1; ]

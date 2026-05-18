@@ -5,7 +5,7 @@
         <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataApp.mc" id="1" lineNum="5" parent="globals/EnduroDataApp" pc="268435460" symbol="&lt;init&gt;"/>
         <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/gen/006-B4575-00/source/Rez.mcgen" id="2" lineNum="7" parent="globals/Rez" pc="268435472" symbol="&lt;init&gt;"/>
         <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc" id="3" lineNum="4" parent="globals/SendListener" pc="268435492" symbol="&lt;init&gt;"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="4" lineNum="7" parent="globals/EnduroDataField" pc="268435504" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="4" lineNum="9" parent="globals/EnduroDataField" pc="268435504" symbol="&lt;init&gt;"/>
         <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataApp.mc" id="5" lineNum="11" parent="globals/EnduroDataApp" pc="268435516" symbol="onStart"/>
         <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataApp.mc" id="6" lineNum="15" parent="globals/EnduroDataApp" pc="268435519" symbol="getInitialView"/>
         <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataApp.mc" id="6" lineNum="16" parent="globals/EnduroDataApp" pc="268435521" symbol="getInitialView"/>
@@ -16,47 +16,47 @@
         <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc" id="9" lineNum="10" parent="globals/SendListener" pc="268435571" symbol="onError"/>
         <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc" id="11" lineNum="5" parent="globals/SendListener" pc="268435590" symbol="initialize"/>
         <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataDelegate.mc" id="11" lineNum="6" parent="globals/SendListener" pc="268435592" symbol="initialize"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="22" parent="globals/EnduroDataField" pc="268435609" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="23" parent="globals/EnduroDataField" pc="268435612" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="24" parent="globals/EnduroDataField" pc="268435620" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="25" parent="globals/EnduroDataField" pc="268435637" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="26" parent="globals/EnduroDataField" pc="268435653" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="28" parent="globals/EnduroDataField" pc="268435706" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="31" parent="globals/EnduroDataField" pc="268435718" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="32" parent="globals/EnduroDataField" pc="268435726" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="34" parent="globals/EnduroDataField" pc="268435768" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="35" parent="globals/EnduroDataField" pc="268435776" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="36" parent="globals/EnduroDataField" pc="268435782" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="37" parent="globals/EnduroDataField" pc="268435790" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="41" parent="globals/EnduroDataField" pc="268435873" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="44" parent="globals/EnduroDataField" pc="268435885" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="45" parent="globals/EnduroDataField" pc="268435893" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="47" parent="globals/EnduroDataField" pc="268435929" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="48" parent="globals/EnduroDataField" pc="268435944" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="49" parent="globals/EnduroDataField" pc="268435957" symbol="compute"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="13" lineNum="19" parent="globals/EnduroDataField" pc="268436046" symbol="onLayout"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="15" parent="globals/EnduroDataField" pc="268436049" symbol="initialize"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="16" parent="globals/EnduroDataField" pc="268436051" symbol="initialize"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="58" parent="globals/EnduroDataField" pc="268436064" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="59" parent="globals/EnduroDataField" pc="268436067" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="60" parent="globals/EnduroDataField" pc="268436076" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="61" parent="globals/EnduroDataField" pc="268436085" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="63" parent="globals/EnduroDataField" pc="268436092" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="64" parent="globals/EnduroDataField" pc="268436105" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="66" parent="globals/EnduroDataField" pc="268436113" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="67" parent="globals/EnduroDataField" pc="268436130" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="68" parent="globals/EnduroDataField" pc="268436159" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="69" parent="globals/EnduroDataField" pc="268436176" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="71" parent="globals/EnduroDataField" pc="268436205" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="72" parent="globals/EnduroDataField" pc="268436222" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="73" parent="globals/EnduroDataField" pc="268436251" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="74" parent="globals/EnduroDataField" pc="268436268" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="76" parent="globals/EnduroDataField" pc="268436297" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="77" parent="globals/EnduroDataField" pc="268436314" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="78" parent="globals/EnduroDataField" pc="268436343" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="79" parent="globals/EnduroDataField" pc="268436360" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="81" parent="globals/EnduroDataField" pc="268436389" symbol="onUpdate"/>
-        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="82" parent="globals/EnduroDataField" pc="268436406" symbol="onUpdate"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="64" parent="globals/EnduroDataField" pc="268435609" symbol="onTimerLap"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="65" parent="globals/EnduroDataField" pc="268435612" symbol="onTimerLap"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="66" parent="globals/EnduroDataField" pc="268435625" symbol="onTimerLap"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="67" parent="globals/EnduroDataField" pc="268435638" symbol="onTimerLap"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="68" parent="globals/EnduroDataField" pc="268435650" symbol="onTimerLap"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="70" parent="globals/EnduroDataField" pc="268435662" symbol="onTimerLap"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="71" parent="globals/EnduroDataField" pc="268435676" symbol="onTimerLap"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="72" parent="globals/EnduroDataField" pc="268435701" symbol="onTimerLap"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="12" lineNum="73" parent="globals/EnduroDataField" pc="268435746" symbol="onTimerLap"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="13" lineNum="25" parent="globals/EnduroDataField" pc="268435799" symbol="onLayout"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="13" lineNum="26" parent="globals/EnduroDataField" pc="268435801" symbol="onLayout"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="29" parent="globals/EnduroDataField" pc="268435840" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="30" parent="globals/EnduroDataField" pc="268435843" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="31" parent="globals/EnduroDataField" pc="268435851" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="32" parent="globals/EnduroDataField" pc="268435868" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="33" parent="globals/EnduroDataField" pc="268435884" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="35" parent="globals/EnduroDataField" pc="268435937" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="38" parent="globals/EnduroDataField" pc="268435949" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="39" parent="globals/EnduroDataField" pc="268435957" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="39" parent="globals/EnduroDataField" pc="268435963" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="40" parent="globals/EnduroDataField" pc="268435975" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="42" parent="globals/EnduroDataField" pc="268436017" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="43" parent="globals/EnduroDataField" pc="268436025" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="43" parent="globals/EnduroDataField" pc="268436031" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="44" parent="globals/EnduroDataField" pc="268436043" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="45" parent="globals/EnduroDataField" pc="268436049" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="46" parent="globals/EnduroDataField" pc="268436057" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="50" parent="globals/EnduroDataField" pc="268436140" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="53" parent="globals/EnduroDataField" pc="268436152" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="54" parent="globals/EnduroDataField" pc="268436160" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="14" lineNum="56" parent="globals/EnduroDataField" pc="268436196" symbol="compute"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="21" parent="globals/EnduroDataField" pc="268436282" symbol="initialize"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="15" lineNum="22" parent="globals/EnduroDataField" pc="268436284" symbol="initialize"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="16" lineNum="77" parent="globals/EnduroDataField" pc="268436297" symbol="onUpdate"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="16" lineNum="78" parent="globals/EnduroDataField" pc="268436300" symbol="onUpdate"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="16" lineNum="79" parent="globals/EnduroDataField" pc="268436309" symbol="onUpdate"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="16" lineNum="81" parent="globals/EnduroDataField" pc="268436318" symbol="onUpdate"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="16" lineNum="82" parent="globals/EnduroDataField" pc="268436331" symbol="onUpdate"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="16" lineNum="84" parent="globals/EnduroDataField" pc="268436339" symbol="onUpdate"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="16" lineNum="85" parent="globals/EnduroDataField" pc="268436348" symbol="onUpdate"/>
+        <entry filename="/Users/mikes/claude-code/GarminEnduro3Connect/watch-app/source/EnduroDataView.mc" id="16" lineNum="86" parent="globals/EnduroDataField" pc="268436355" symbol="onUpdate"/>
     </pcToLineNum>
     <symbolTable>
         <entry id="8388639" module="true" symbol="Graphics"/>
@@ -65,7 +65,9 @@
         <entry id="5" object="true" symbol="EnduroDataApp"/>
         <entry field="true" id="8388611" module="true" symbol="Toybox"/>
         <entry field="true" id="10" symbol="&lt;globals/EnduroDataField/&lt;&gt;_hr&gt;"/>
-        <entry field="true" id="14" symbol="AppName"/>
+        <entry field="true" id="13" symbol="&lt;globals/EnduroDataField/&lt;&gt;_lastDist&gt;"/>
+        <entry field="true" id="19" symbol="AppName"/>
+        <entry field="true" id="12" symbol="&lt;globals/EnduroDataField/&lt;&gt;_lapStartTime&gt;"/>
         <entry id="4" module="true" symbol="globals/Rez/Strings"/>
         <entry id="8388631" module="true" symbol="Activity"/>
         <entry id="8388648" module="true" symbol="WatchUi"/>
@@ -74,44 +76,54 @@
         <entry id="8388771" module="true" object="true" symbol="Drawables"/>
         <entry id="8389122" method="true" symbol="onLayout"/>
         <entry field="true" id="8" symbol="&lt;globals/EnduroDataField/&lt;&gt;_dist&gt;"/>
+        <entry field="true" id="17" symbol="EverysightLogo"/>
         <entry id="8389137" method="true" symbol="compute"/>
         <entry id="8388637" module="true" symbol="Communications"/>
         <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
         <entry id="8388828" method="true" symbol="onError"/>
+        <entry field="true" id="15" symbol="&lt;globals/EnduroDataField/&lt;&gt;_logo&gt;"/>
         <entry id="7" object="true" symbol="SendListener"/>
-        <entry field="true" id="12" symbol="&lt;globals/EnduroDataField/&lt;&gt;_tick&gt;"/>
         <entry id="8388644" module="true" symbol="System"/>
         <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="11" symbol="&lt;globals/EnduroDataField/&lt;&gt;_lapStartDist&gt;"/>
         <entry id="8388640" module="true" symbol="Lang"/>
-        <entry field="true" id="13" symbol="LauncherIcon"/>
+        <entry field="true" id="18" symbol="LauncherIcon"/>
         <entry id="8388610" symbol="statics"/>
         <entry id="8389350" module="true" symbol="globals"/>
         <entry id="8388770" module="true" object="true" symbol="Strings"/>
         <entry id="8388702" method="true" symbol="initialize"/>
         <entry id="8389279" method="true" symbol="onStart"/>
-        <entry field="true" id="11" symbol="&lt;globals/EnduroDataField/&lt;&gt;_pace&gt;"/>
+        <entry field="true" id="16" symbol="&lt;globals/EnduroDataField/&lt;&gt;_pace&gt;"/>
+        <entry id="8389751" method="true" symbol="onTimerLap"/>
         <entry id="8389280" method="true" symbol="getInitialView"/>
         <entry id="8389281" method="true" symbol="onStop"/>
+        <entry field="true" id="14" symbol="&lt;globals/EnduroDataField/&lt;&gt;_lastTime&gt;"/>
         <entry id="8388829" method="true" symbol="onComplete"/>
         <entry field="true" id="9" symbol="&lt;globals/EnduroDataField/&lt;&gt;_elapsed&gt;"/>
         <entry id="8388635" module="true" symbol="Application"/>
     </symbolTable>
     <localVars>
-        <entry arg="true" endPc="268436045" name="info" stackId="1" startPc="268435609"/>
-        <entry endPc="268436044" name="speed" stackId="2" startPc="268435612"/>
-        <entry endPc="268435702" name="totalSec" stackId="3" startPc="268435637"/>
-        <entry endPc="268436044" name="d" stackId="4" startPc="268435612"/>
-        <entry endPc="268436044" name="t" stackId="5" startPc="268435612"/>
-        <entry endPc="268435869" name="s" stackId="6" startPc="268435782"/>
-        <entry endPc="268436044" name="h" stackId="7" startPc="268435612"/>
-        <entry arg="true" endPc="268436441" name="dc" stackId="1" startPc="268436064"/>
-        <entry endPc="268436440" name="w" stackId="2" startPc="268436067"/>
-        <entry endPc="268436440" name="h" stackId="3" startPc="268436067"/>
-        <entry endPc="268436440" name="cx" stackId="4" startPc="268436067"/>
+        <entry endPc="268435797" name="lapDist" stackId="1" startPc="268435612"/>
+        <entry endPc="268435797" name="lapTime" stackId="2" startPc="268435612"/>
+        <entry endPc="268435794" name="lapPaceSec" stackId="3" startPc="268435676"/>
+        <entry endPc="268435794" name="lapPace" stackId="4" startPc="268435676"/>
+        <entry arg="true" endPc="268435839" name="dc" stackId="1" startPc="268435799"/>
+        <entry arg="true" endPc="268436281" name="info" stackId="1" startPc="268435840"/>
+        <entry endPc="268436280" name="speed" stackId="2" startPc="268435843"/>
+        <entry endPc="268435933" name="totalSec" stackId="3" startPc="268435868"/>
+        <entry endPc="268436280" name="d" stackId="4" startPc="268435843"/>
+        <entry endPc="268436280" name="t" stackId="5" startPc="268435843"/>
+        <entry endPc="268436136" name="s" stackId="6" startPc="268436049"/>
+        <entry endPc="268436280" name="h" stackId="7" startPc="268435843"/>
+        <entry arg="true" endPc="268436396" name="dc" stackId="1" startPc="268436297"/>
+        <entry endPc="268436395" name="w" stackId="2" startPc="268436300"/>
+        <entry endPc="268436395" name="h" stackId="3" startPc="268436300"/>
+        <entry endPc="268436392" name="logo" stackId="4" startPc="268436348"/>
     </localVars>
     <deviceInfo deviceVersion="45fe3cbb0de8ea0a70e12628d2697915f1272301" partNumber="006-B4575-00"/>
     <annotations>
         <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="EverysightLogo"/>
         <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
     </annotations>
     <dataEntryOffsetMappings>
@@ -120,8 +132,8 @@
         <dataEntry label="globals/Rez" offset="187" parentId="globals" symbolId="Rez" type="module"/>
         <dataEntry label="globals/SendListener" offset="231" parentId="globals" symbolId="SendListener" type="class"/>
         <dataEntry label="globals/EnduroDataField" offset="293" parentId="globals" symbolId="EnduroDataField" type="class"/>
-        <dataEntry label="globals/Rez/Drawables" offset="409" parentId="Rez" symbolId="Drawables" type="module"/>
-        <dataEntry label="globals/Rez/Strings" offset="444" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/Rez/Drawables" offset="454" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="498" parentId="Rez" symbolId="Strings" type="module"/>
     </dataEntryOffsetMappings>
     <functions>
         <functionEntry accessMode="public" endPc="268435471" name="&lt;init&gt;" parent="EnduroDataApp" startPc="268435460">
@@ -165,18 +177,21 @@
         <functionEntry accessMode="public" endPc="268435608" name="initialize" parent="SendListener" startPc="268435590">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268436045" name="compute" parent="EnduroDataField" startPc="268435609">
-            <param id="info"/>
+        <functionEntry accessMode="public" endPc="268435798" name="onTimerLap" parent="EnduroDataField" startPc="268435609">
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268436048" name="onLayout" parent="EnduroDataField" startPc="268436046">
+        <functionEntry accessMode="public" endPc="268435839" name="onLayout" parent="EnduroDataField" startPc="268435799">
             <param id="dc"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268436063" name="initialize" parent="EnduroDataField" startPc="268436049">
+        <functionEntry accessMode="public" endPc="268436281" name="compute" parent="EnduroDataField" startPc="268435840">
+            <param id="info"/>
             <documentation/>
         </functionEntry>
-        <functionEntry accessMode="public" endPc="268436441" name="onUpdate" parent="EnduroDataField" startPc="268436064">
+        <functionEntry accessMode="public" endPc="268436296" name="initialize" parent="EnduroDataField" startPc="268436282">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436396" name="onUpdate" parent="EnduroDataField" startPc="268436297">
             <param id="dc"/>
             <documentation/>
         </functionEntry>
