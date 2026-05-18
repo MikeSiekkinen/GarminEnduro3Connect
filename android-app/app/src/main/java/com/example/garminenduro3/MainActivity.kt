@@ -28,11 +28,17 @@ class MainActivity : AppCompatActivity() {
 
     private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
-    ) { results ->
-        if (results.values.all { it }) {
-            viewModel.initialize()
+    ) { _ ->
+        val btGranted = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED
         } else {
-            updateStatus("Bluetooth permission denied — cannot connect to watch")
+            true
+        }
+        if (btGranted) viewModel.initialize()
+        else updateStatus("Bluetooth permission denied — cannot connect to watch")
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            viewModel.startStreetNameUpdates()
         }
     }
 
@@ -70,15 +76,21 @@ class MainActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 add(Manifest.permission.BLUETOOTH_CONNECT)
                 add(Manifest.permission.BLUETOOTH_SCAN)
-            } else {
-                add(Manifest.permission.ACCESS_FINE_LOCATION)
             }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                add(Manifest.permission.POST_NOTIFICATIONS)
+            }
+            add(Manifest.permission.ACCESS_FINE_LOCATION)
         }.filter {
             ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
         }
 
-        if (needed.isEmpty()) viewModel.initialize()
-        else permissionLauncher.launch(needed.toTypedArray())
+        if (needed.isEmpty()) {
+            viewModel.initialize()
+            viewModel.startStreetNameUpdates()
+        } else {
+            permissionLauncher.launch(needed.toTypedArray())
+        }
     }
 
     private var _sdkReady = false

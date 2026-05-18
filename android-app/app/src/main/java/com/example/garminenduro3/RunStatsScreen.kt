@@ -2,6 +2,7 @@ package com.example.garminenduro3
 
 import UIKit.app.Screen
 import UIKit.app.data.Align
+import UIKit.app.data.AlignV
 import UIKit.app.data.EvsColor
 import UIKit.app.resources.Font
 import UIKit.controls.popup.PopupMessage
@@ -16,6 +17,10 @@ class RunStatsScreen : Screen() {
     private val timeValue = Text()
     private val hrLabel   = Text()
     private val hrValue   = Text()
+    private val streetNameText = Text()
+
+    private var lastStreetName = ""
+    private var streetNameVisible = true
 
     override fun onCreate() {
         val w = getWidth()
@@ -50,6 +55,13 @@ class RunStatsScreen : Screen() {
         value(timeValue, "-:--:--",  col1, valueRow2)
         label(hrLabel,   "HR",       col2, labelRow2)
         value(hrValue,   "--",       col2, valueRow2)
+
+        streetNameText.setText("")
+            .setResource(Font.StockFont.Small)
+            .setTextAlign(Align.center)
+            .setForegroundColor(EvsColor.White.rgba)
+        streetNameText.setX(w * 0.5f).setY(h * 0.05f)
+        add(streetNameText)
     }
 
     fun update(pace: String, dist: String, elapsed: String, hr: String) {
@@ -59,12 +71,22 @@ class RunStatsScreen : Screen() {
         hrValue.setText(hr)
     }
 
+    fun updateStreetName(name: String) {
+        lastStreetName = name
+        if (streetNameVisible) streetNameText.setText(name)
+    }
+
+    fun setStreetNameVisible(visible: Boolean) {
+        streetNameVisible = visible
+        streetNameText.setText(if (visible) lastStreetName else "")
+    }
+
     fun showLapSplit(lapPace: String) {
         val label = Text()
         label.setText("Mile  $lapPace /mi")
             .setResource(Font.StockFont.Medium)
             .setTextAlign(Align.center)
             .setForegroundColor(EvsColor.Green.rgba)
-        showPopup(PopupMessage(label, getHeight() * 0.5f, 5000L))
+        showPopup(PopupMessage(label, AlignV.center, 5000))
     }
 }
