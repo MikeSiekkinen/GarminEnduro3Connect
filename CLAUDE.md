@@ -221,9 +221,11 @@ cp android-app/gradle/wrapper/gradle-wrapper.jar "$WORKTREE/gradle/wrapper/"
 ```
 
 The Everysight API key asset `android-app/app/src/main/assets/sdk.<serial>.key` is **also gitignored** (see `.gitignore`) and is required for glasses auth — it is invisible to git, so a clean checkout (or a worktree) won't have it. Copy it in too:
-```
+
+```bash
 cp android-app/app/src/main/assets/sdk.<serial>.key "$WORKTREE/app/src/main/assets/"
 ```
+
 If it's missing, `EverysightManager.start()` now sets `GlassesState.ERROR` and logs loudly rather than failing silently.
 
 ## In-progress work

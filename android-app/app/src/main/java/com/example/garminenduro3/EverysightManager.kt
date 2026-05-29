@@ -74,19 +74,20 @@ class EverysightManager private constructor(private val context: Context) {
         Evs.instance().registerAppEvents(events)
 
         // The SDK's auto-load of assets/sdk.[serial].key doesn't fire reliably; feed
-        // the key bytes in directly.
-        runCatching { context.assets.open(API_KEY_ASSET).use { it.readBytes() } }
-            .onSuccess { Evs.instance().auth().setApiKey(it) }
-            .onFailure {
-                // A missing/unreadable key means the glasses will never authenticate.
-                // Surface it loudly (ERROR state + clear log) instead of silently
-                // appearing to start while auth never happens.
+        // the key bytes in directly. A missing/unreadable key means the glasses can
+        // never authenticate, so abort the connect flow: surface ERROR loudly, tear
+        // down the partial SDK state we just set up, and return before startExt/scan.
+        val apiKey = runCatching { context.assets.open(API_KEY_ASSET).use { it.readBytes() } }
+            .getOrElse {
                 Log.e(
                     "EverysightManager",
                     "API key asset '$API_KEY_ASSET' not found — glasses will not authenticate", it
                 )
                 _glassesState.value = GlassesState.ERROR
+                teardown()
+                return
             }
+        Evs.instance().auth().setApiKey(apiKey)
 
         Evs.instance().startExt(hashSetOf(GLASSES_NAME))
 
