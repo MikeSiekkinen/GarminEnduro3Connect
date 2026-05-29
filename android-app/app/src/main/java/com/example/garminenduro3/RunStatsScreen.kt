@@ -8,7 +8,14 @@ import UIKit.app.resources.Font
 import UIKit.controls.popup.PopupMessage
 import UIKit.widgets.Text
 
-class RunStatsScreen : Screen() {
+class RunStatsScreen(
+    private val initialPace: String = "--:--",
+    private val initialDist: String = "-.--",
+    private val initialElapsed: String = "-:--:--",
+    private val initialHr: String = "--",
+    initialStreetName: String = "",
+    initialStreetVisible: Boolean = true,
+) : Screen() {
     private val paceLabel = Text()
     private val paceValue = Text()
     private val distLabel = Text()
@@ -19,8 +26,10 @@ class RunStatsScreen : Screen() {
     private val hrValue   = Text()
     private val streetNameText = Text()
 
-    private var lastStreetName = ""
-    private var streetNameVisible = true
+    // Seeded from constructor so a screen recreated on reconnect renders the last-known
+    // values directly in onCreate() — no post-create replay, hence no timing race.
+    private var lastStreetName = initialStreetName
+    private var streetNameVisible = initialStreetVisible
 
     override fun onCreate() {
         val w = getWidth()
@@ -48,15 +57,15 @@ class RunStatsScreen : Screen() {
         }
 
         label(paceLabel, "PACE",     col1, labelRow1)
-        value(paceValue, "--:--",    col1, valueRow1)
+        value(paceValue, initialPace,    col1, valueRow1)
         label(distLabel, "DIST",     col2, labelRow1)
-        value(distValue, "-.--",     col2, valueRow1)
+        value(distValue, initialDist,    col2, valueRow1)
         label(timeLabel, "TIME",     col1, labelRow2)
-        value(timeValue, "-:--:--",  col1, valueRow2)
+        value(timeValue, initialElapsed, col1, valueRow2)
         label(hrLabel,   "HR",       col2, labelRow2)
-        value(hrValue,   "--",       col2, valueRow2)
+        value(hrValue,   initialHr,      col2, valueRow2)
 
-        streetNameText.setText("")
+        streetNameText.setText(if (streetNameVisible) lastStreetName else "")
             .setResource(Font.StockFont.Small)
             .setTextAlign(Align.center)
             .setForegroundColor(EvsColor.White.rgba)
