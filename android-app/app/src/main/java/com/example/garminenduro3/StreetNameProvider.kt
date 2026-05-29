@@ -59,19 +59,24 @@ class StreetNameProvider(context: Context) {
     }
 
     private fun geocode(lat: Double, lon: Double) {
+        // Only publish a non-blank thoroughfare. A geocode that returns no result or a
+        // road segment with no thoroughfare must NOT blank the overlay — otherwise the
+        // street name flickers on/off as the runner moves through sparse-data areas.
+        // On an empty/failed lookup we retain the last known value.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             geocoder.getFromLocation(lat, lon, 1) { addresses ->
-                _streetName.value = addresses.firstOrNull()?.thoroughfare ?: ""
+                val name = addresses.firstOrNull()?.thoroughfare
+                if (!name.isNullOrBlank()) _streetName.value = name
             }
         } else {
             scope.launch(Dispatchers.IO) {
                 val name = try {
                     @Suppress("DEPRECATION")
-                    geocoder.getFromLocation(lat, lon, 1)?.firstOrNull()?.thoroughfare ?: ""
+                    geocoder.getFromLocation(lat, lon, 1)?.firstOrNull()?.thoroughfare
                 } catch (_: Exception) {
-                    ""
+                    null
                 }
-                _streetName.value = name
+                if (!name.isNullOrBlank()) _streetName.value = name
             }
         }
     }
