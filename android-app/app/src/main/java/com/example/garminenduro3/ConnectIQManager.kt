@@ -99,12 +99,33 @@ class ConnectIQManager private constructor(private val context: Context) {
         try {
             connectIQ?.registerForDeviceEvents(device, object : ConnectIQ.IQDeviceEventListener {
                 override fun onDeviceStatusChanged(dev: IQDevice, newStatus: IQDevice.IQDeviceStatus) {
+                    // Capture the prior status before we overwrite it so we can detect a
+                    // CONNECTED -> not-CONNECTED transition. This callback only fires on actual
+                    // status changes (not on every incoming run-stats message), so normal
+                    // streaming never trips the reset below.
+                    val prevStatus = _devices.value
+                        .firstOrNull { it.device.deviceIdentifier == dev.deviceIdentifier }
+                        ?.status
+
                     _devices.update { list ->
                         list.map { info ->
                             if (info.device.deviceIdentifier == dev.deviceIdentifier)
                                 info.copy(device = dev, status = newStatus)
                             else info
                         }
+                    }
+
+                    // When the watch link drops (leaves BLE range / stops transmitting), blank
+                    // the run stats back to placeholder defaults so the glasses HUD no longer
+                    // shows stale pace/dist/time/HR. The downstream collector (MainViewModel ->
+                    // EverysightManager.updateStats) pushes these placeholders to the glasses
+                    // automatically. Only fire on an actual CONNECTED -> not-CONNECTED edge to
+                    // avoid resetting repeatedly / flickering.
+                    if (prevStatus == IQDevice.IQDeviceStatus.CONNECTED &&
+                        newStatus != IQDevice.IQDeviceStatus.CONNECTED
+                    ) {
+                        _runStats.value = RunStats()
+                        appendMessage("Watch ${dev.friendlyName} ${newStatus.name} — cleared stats")
                     }
                 }
             })
@@ -172,7 +193,10 @@ class ConnectIQManager private constructor(private val context: Context) {
     }
 
     private fun appendMessage(msg: String) {
-        _messages.update { it + msg }
+        // Cap retained log to the most recent MAX_LOG_MESSAGES entries. appendMessage is
+        // called ~2x/sec for the whole process lifetime; an unbounded append would grow the
+        // list forever and re-copy it on every call (O(n)). The UI only ever shows the tail.
+        _messages.update { (it + msg).takeLast(MAX_LOG_MESSAGES) }
     }
 
     fun shutdown() {
@@ -182,6 +206,9 @@ class ConnectIQManager private constructor(private val context: Context) {
     }
 
     companion object {
+        /** Max diagnostic log entries retained in [messages]; the UI only shows the tail. */
+        private const val MAX_LOG_MESSAGES = 50
+
         @Volatile private var instance: ConnectIQManager? = null
 
         fun getInstance(context: Context): ConnectIQManager =
